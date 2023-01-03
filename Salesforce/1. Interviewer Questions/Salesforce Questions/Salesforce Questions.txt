@@ -1,0 +1,35 @@
+1. How many actions are there in process builder? What are they?
+2. Differences between Process Builder Flow and Work Flow?
+3. What are the advantages of Flows over Process Builder?
+5. What is Salesforce & What is Visualforce?
+6. Differences between Profile & Role?
+7. What is trigger & what is the types of trigger? What are the events associated with trigger?
+8. Differences between trigger.new & trigger.old?
+9. What is a recursive trigger?
+10. What are sharing rules in Salesforce? 
+11. What is the order of execution in Salesforce?
+12. What is custom setting?
+13. What are synchronous and asynchronous processes?
+14. What is the significance of future method? Where have you implemented future method in your project?
+15. What is the difference between Future Apex and Queueable Apex?
+16. What is the syntax of a Batch class?
+17. How many HTTP call outs we can make?
+18. What are the Governor limit errors you came across?
+19. What is 202 error?
+20. How many future method can be defined in a class?
+21. How to test future method?
+22. What is method overloading & overriding?
+23. Give best practices of writing test classes.
+24. What are reports? What are its types?
+25. What is a dynamic dashboard?
+26. What are the types of relationships?
+
+	
+
+Hello everyone! It feels really glad to share that I've completed my Salesforce Developer Virtual Internship Program via #SmartInternz.
+
+I would like to thank #SmartInternz and #Salesforce for providing such a fantastic opportunity @Yudhisther Yadav @Shiva Kumar.G @Amarender Katkam @Jaya Prakash Ch
+
+Learn a lot about the World's #1 CRM #Salesforce
+
+#smartinternz, #salesforce, #skilledonsalesforce, #thesmartbridge, #AICTE #virtualinternship #jobready

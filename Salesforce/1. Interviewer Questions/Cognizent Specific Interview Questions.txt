@@ -1,0 +1,70 @@
+I'm from JavaScript background
+
+What is Salesforce?
+explain scheduled apex?
+explain batch apex?
+Difference between HashMap & HashSet
+Tell me something about yourself and your experience.
+Permission sets
+Apex class
+Work flow
+profile
+Process builder
+Write a Trigger.
+Concepts on configuration
+Profiles and roles in Salesforce
+Basics of Salesforce
+Aura: Events and asked to write a component
+
+
+
+Mainly asked on triggers,batch apex,test classes,Lightining basics,profiles and roles,securrity,lwc basics,sandbox,REST,sObjects,SOQL,SOSL,workflow,approvalprocess,JS basics,diffrent clouds,loops,classes,focused on trigger design,fetching records using SOQL,governer limits.exception handling,Agile methodology,Sales cloud,service cloud,different code editors and debugging tools,deployment tools,flows,task managemnt
+
+
+As a salesforce developer you should have good hands -on experience in apex classes, triggers,lightning components. 
+
+
+they are asking all scenario based ques
+from trigger and sharing setting they asked most of the scenario based questions,and you can expect questions from asynchronous apex and just go through all the methods related to asnyc apex
+from trigger and sharing setting they asked most of the scenario based ques
+
+
+questions were based on VF pages, Apex triggers, scenario based questions.
+
+
+A master object has a number field which has 3 records. How to do validation so that if the sum of these 3 record will be more than 100 it will throw an error
+Ans:- We can use the before trigger for the same.
+
+-1rst round was for testing basic concepts
+-2nd round was for sceanrio based questions , they will ask you to write some code also based on the scenario.
+
+
+explanation about previous projects, explain a use case in Apex and visualforce
+
+
+Tell about Custom setting in Salesforce?
+Ans:-It's like custom object but act like a cache.
+
+
+core Java concepts (OOP, Web framework (front end and back end), wrapper class, inheritance, abstraction, polymorphism, Java basics).
+
+Users, Profiles and Roles in Validation rules
+
+
+Interview Questions
+Technical Round:
+
+1. Write one Vf page to show list of child records of parent.
+2. Difference b/w
+repeat and pageblocktable,
+actionfunction and actionsupport
+3. How will you show 3 objects(having relationship) records in one row? Write Code.
+4. What are trigger events and usage?
+5. Write trigger which updates on parent object.
+
+Manager Round:
+
+1. What all projects you worked so far?
+2. What are Service, Sales and Marketing clouds? and which one your good at?
+3. How you will do data migration from some other system to Salesforce and which tool you used?
+4. Did you worked on PEGA?

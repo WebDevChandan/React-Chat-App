@@ -1,0 +1,9 @@
+Workflow:
+https://intellipaat.com/blog/tutorial/salesforce-tutorial/workflow-rules-in-salesforce/
+
+Trigger:
+https://intellipaat.com/blog/tutorial/salesforce-tutorial/triggers-in-salesforce/
+
+Process Builder:
+https://intellipaat.com/blog/tutorial/salesforce-tutorial/process-builder/#:~:text=Salesforce%20Process%20Builder%20is%20basically,different%20field%20values%20for%20it.
+

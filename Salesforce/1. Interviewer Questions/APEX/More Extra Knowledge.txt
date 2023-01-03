@@ -1,0 +1,5 @@
+Note:-
+1. sObject in Salesforce is nothing but a Table that stored in Salesforce platform Database.
+2. Custom object named with '__c'. Example: Invoice__c, payroll__c
+3. Account a :- Account is a sObject and 'a' is the variable that we declare for it. This is the declaration of an object. So, here, 'a' is an account sObject variable.
+4. Performing BULK DML operations is the recommended way because it helps avoid hitting governor limits.
