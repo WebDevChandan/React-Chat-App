@@ -1,0 +1,309 @@
+1. JavaScript is a programming or a scripting langauge that allows the implementation of features on web pages.
+  Can change content of HTML Elements
+  Can change the value of attributes
+  Can chage the styling of HTML elements.
+
+2. Difference between putting <script> element inside <head> & <body> tag when using internal JavaScript.
+  When the <script> is inside the <head>, it loads first before the content of the page.
+  For Ex: If we place the <script> element consisting some kind of event listener code, before closing </head> tag. Then the event listener on the target element would not work because the event listener loaded first before the HTML element.
+  When it's insde the <body>, it loads after the content of the page(HTML elements) loads. That's why it is recommended to put the <script> tag in the body when using internal JavaScript.
+
+3. Using External JavaScript is beneficial when multiple web pages use the same script. It also organizes codes and help maintain readablity as JavaScript is separated from HTML.
+  Note: External and Internal scripts behave the same way.
+
+4. var num = 5; 
+  The num in the example above is called identifier.
+  JavaScript identifiers are used to name variables.
+  Since, JS is case-sensite, JS identifiers are case-sensitive as well.
+  The var keyword creates or declares a variable. Here, the variable num is declared and initialized ot the value 21.
+  If we just decalred a variable but not initiallized, that variable would return undefinded.
+
+5. DataTypes in JavaScript:- Datatypes are the differnt kinds of data that can be sotred or used in a program.
+  There are total of 8 DataTypes in Js and We can divide all these datatypes into 2 Categories,
+  Primitive Data & Objects
+  Primitive Data: Primitive Data are data that are not object and has no methods. They are immutable (that is, values which can't be changed).
+    string, number, null, undefined, boolean, Big Int and Symbol. 
+    Number      - In JS, there are two types of numbers (Integer & Floating Point). So, Number data types is an interger or a floating point number (means number with decimal).
+                  Extra/Very Large or small numbers can be written using e-notation (exponent notation).
+                  Ex: (212e6 -> 212000000) or (212e-6 -> 0.000212)
+                  ECMAScript has two built-in numeric types: Number and BigInt — along with the related value NaN.
+                   It is capable of storing "+ve floating-point" numbers between 2^-1074 (Number.MIN_VALUE) and 2^1024 (Number.MAX_VALUE) as well as "-ve floating-point" numbers between -(2^-1074) and -(2^1024), but it can only safely store integers in the range -(2^53 − 1) (Number.MIN_SAFE_INTEGER) to 2^53 − 1 (Number.MAX_SAFE_INTEGER).
+                  Values outside the range ±(2^-1074 to 2^1024) are automatically converted:
+                  -- Positive values greater than Number.MAX_VALUE are converted to +Infinity (Number.POSITIVE_INFINITY).
+                  -- Positive values smaller than Number.MIN_VALUE are converted to +0.
+                  -- Negative values smaller than -Number.MAX_VALUE are converted to -Infinity. (Number.NEGATIVE_INFINITY)
+                  -- Negative values greater than -Number.MIN_VALUE are converted to -0.
+
+    BigInt      - The BigInt type is a numeric primitive in JavaScript that can represent integers with arbitrary precision.
+                  With BigInts, you can safely store and operate on large integers even beyond the safe integer limit for Numbers. With the introduction of BigInts, we can operate with numbers beyond the Number.MAX_SAFE_INTEGER.
+                  A BigInt is created by appending n to the end of an integer or by calling the constructor.
+                  Example:
+                  Without BigInt:
+                    let x = Number.MAX_SAFE_INTEGER;    //9007199254740991
+                        (x + 1) === (x+2);             // true
+                  With BigInt:
+                    let x = BigIng(Number.MAX_SAFE_INTEGER);    //9007199254740991n
+                        (x + 1n) === (x+2n);             // false
+
+    String      - The string data type is a sequence of charactes used to represent text.
+                  JavaScript strings are immutable. This means that once a string is created, it is not possible to modify it. However, it is still possible to create another string based on an operation (like assigning another string using assignment operator) on the original string.
+                  For Example:
+                    let arr = ['C', 'h', 'a', 'n', 'd', 'a', 'n'];      //  ['K', 'h', 'a', 'n', 'd', 'a', 'n']
+                    let str = 'Chandan';                               //   'Chandan';
+
+                    arr[0] = 'K';   //returns 'K'
+                    str[0] = 'K';   // returns 'K'
+
+                    console.log(arr);   //  ['K', 'h', 'a', 'n', 'd', 'a', 'n']
+                    console.log(str);   //  'Chandan' 
+
+                    It happens this because, strings are immutable that can't be changed. Whereas, In JavaScript, only objects and arrays are mutable, not primitive values. So, it can be changed.
+
+    Boolean     - It is a logical data types that can only have true or false.
+    Undefined   - Means A Variable has been declared but no value assigned to it.
+                  Ex: var title;  //variable has been decalred but no value assigned or say but not initiallized.
+    Null        - Null is datatypes which indicates intentional absence of data. Null indicates its not Zero, its not empty, just   absence of data. So, Null data type is a special data type denoting a null value - means it's not an empty string "" or 0.
+    We can empty a variable by just assigning it to null.
+
+  Objects: They are mutable (that is, values which can be changed).
+  Object - Object data type is a collection of related data. Objects contain properties written in kye:value pairs. Each paris separated by comma(,).
+  var obj = new Object;     //object 
+
+  Note:   
+  -- Combining string + number --> return string.
+  -- Since JS evalutes from left to right, different sequences produce different results.
+      10 + 11 + "Chandan";    //returns "21Chandan" 
+      "Chandan" + 10 + 11 ;  //returns "Chandan1011"
+  -- A JavaSript array is a collection of values. Each value is separated with comma(,);
+  -- There are 4 basic primitive data types are: string, number, boolean and undefined. 
+  -- Except Big Int & Symbol all rest datatypes are widely used.
+  -- typeof operator return 'object' when the operand is an object, array or null. And it returns 'function', when the operand a function.
+  -- Arrays are regular objects for which there is a particular relationship between integer-keyed properties and the length property.
+  -- An object is a collection of properties and/or methods. Two ways to access an object's members (properties and methods) are: The Dot Notation and The Square Bracket or simply say Bracket Notation.
+  -- var str = "Hello World!";  When you create a string: Your variable becomes a String object instance. As a result, many properties and methods are available to it.
+  -- JS will try to convert numbers as much as possible
+    For Ex: We can perform all these operation (-*/) with two String Operands in Js, Like "10" - "2"  //returns 8
+            We can also perform all these operation (-*/) with One String & One Number Operands in Js, Like "10" - 2  //returns 8
+            It 's because JS was able to convert the stirngs to numbers.
+            But this doesn't work with addition. Because JS concatenates them as strings and don't add them as numbers.
+  -- toFixed(): The toFixed() method is a Number method which formats a number using fixed-point notation.
+                It returns a string with the specified number of decimals.
+                Ex: (21.123456).toFixed(3);   //returns 21.123
+
+            
+
+
+typeof Operator: typeof Operator always return a stirng indicating the data type of the evaluated operand.
+
+NaN: NaN ("Not a Number") is typically encountered when the result of an arithmetic operation cannot be expressed as a number. 
+       Or It is a property representing an illegal number. Performing arithmetic operation with non-numberic Data will return NaN.
+       It is also the only value in JavaScript that is not equal to itself.
+       NaN === NaN        // false
+       10 / 'Chandan'    //returns NaN
+       Although NaN represnts invalid numbers, its data types is still number. Ex: typeof NaN   //returns number
+isNaN(): The isNaN() method returns true if its argument is not a legal number, otherwise false.
+
+  How JavaScript is a Dynamic Language?
+  JavaScript is a loosely typed dynamic Language because variables are not directly associated with a single data type, unline in other programming langauges.
+  Any variable in JavaScript can be reassigned to values of all types.
+  Ex: var x = "text";     // x is a string
+          x = true;      // x is now a boolean
+          x =  21;        // x is now a number
+
+
+6. String Operators: String operators are used to concatenate or add strings. 
+   The addition operator + and the addition assignment operator += are the string operators.
+   
+   Exponentiation Operator (**): It returns the result of raising its operand to the power of its second operand.
+   Ex: var x = 2**4;      // It's the same with 2 * 2 * 2 * 2
+
+   Operator Sequence: Describes the order of performed operations in an arithmetic expression.
+    JavaScript follows the MDAS patterns in Math, where multiplication is performed first, division is second, addition is third and subtraction is fourth or last.
+    Ex: let x = 10+3*4; // returns 25
+    But what if we need a certain operation to be performed first?
+      We can use grouping to do that, grouped expressions are performed first before the others. Use paraenteses() to group expressions.
+    Ex: let x = (10 + 3) * 5;
+
+    Equality Operator:      ==
+    Identity Operator:      ===
+    Non-Identity Operator:  !==
+    Inequality Operator:    !=
+    Greater than Operator:  >
+    Less than Operator:     <
+
+7. return statement: The return statement is used in a function to stop its execution and to return a vlaue to the function caller.
+   For example, the addNumbers() function reuturns the sum of its arguments to the function caller. Then the function caller prints the returned value to an element.
+
+8. Local Variables: Variables declared inside a function or in Function scope are called local variables. Local variables can only be used inside the function where it was declared. IF a local variables is used outside, the values' data types is undefined.
+
+  Global Variables: Variables declared outside a function. Global variables can be usded by any function.
+
+9. break Statement: break statement terminates the execution of the current loop as well as stop the execution of the switch statement. After termination, the execution proceeds to the next statemetn following the loop.
+   
+   continue Statement: continue statement terminates execution of the statements in the current iteration of the current loop. After continues the execution of the loop with the next iteration.
+
+10. clearTimeout(): clearTimeout() method cancels a timeoout function specified by the setTimeout() method. 
+                    We've to pass the function in which setTimeout() function is defined, through clearTimeout(); method as argument. 
+    clearInterval(): clearInterval() method stops a timed function specified by the setInterval() method.
+                     We've to pass the function in which setInterval() function is defined, through clearTimeout(); method as argument.
+
+
+11. Bitwise Operators:- Bitwise operators treat their operands as a sequence of 32 bits (zeros and ones), rather than as numbers.
+
+    Bitwise XOR (^) Operator: Performs the XOR operation on each pair of bits. It return 1 if a & b are different.
+      0 ^ 0;  //returns 0
+      0 ^ 1;  //returns 1
+      1 ^ 0;  //returns 1
+      1 ^ 1;  //returns 0
+
+    Bitwise Not (~) Operator: Performs the XOR operation on each bit. It return 1 if a & b are different.
+      ~0;    // returns -1
+      ~1;   //  returns -2 
+
+
+12. Escaping Characters: Escaping characters is crucial in handling stings. It help us make sure that our stirngs are recognized as pieces of text, not as poart of the code. To escape characters, use a backslash (\) right before the character.
+  Ex: 
+    var str1 = "She is called \"Rachell\"";         //escaping "
+    var str2 = "She is called \'Rachell\'";        //escaping '
+    var str3 = "Escaping backslash \\";           //escaping \
+
+
+13. String Methods:- 
+  Finding a Substring in a String:- (Check if a smaller string or say substring is present in a string or not)
+    indexOf(): The indexOf() method returns the index of the first occurence of a substring in  a string. 
+    lastIndexOf(): The lastIndexOf() method returns the index of the last occurence of a substring in a string. 
+    search(): The search() methods works similarly with the indxeof() method. It returns the index of the first occurence of a text in a string.
+
+    Ex:
+      let str = 'Chandan';  
+      str.indexOf('a');            // returns 2
+      str.lastIndexOf('a');       // returns 5
+      str.search('a');           // returns 2
+    
+  
+  Extracting a String:- (Extract a substring from a string)
+    slice(start, end): The slice() method extracts a section of a string and returns it as a new string. It takes two numerical parameters:
+    the start index(position), the end character Position Number(not index). With this we can extract character from one charcter's index to another charcter's position number.  
+    The slice() method can take negative values as well. Negative values start counting from the end of the string. In negative value:
+    the start character Position Number from the end(not index) , the end index from the end(position) of the string . With this we can extract character from one charcter's index to another charcter's position number. Alrhough we can extract charcter in both +ve & -ve paramenter but only in forward direction of character in string.
+    Ex: let str = 'Chandan';
+        str.slice(3, 6);       //returns 'nda' because 3 is index of 'n' to 6 (position number of 'a' in str);
+        str.slice(-6,-2);     //returns 'hand' because -6 is (position number of 'h' from end in str ) to 6 (index of 'd' from end in str);
+
+    substring(start, end): The substring() method works the same way as the slice() method. The only difference between slice() and substring() methods is that the substring() method cannot take negative values.
+
+    substr(star, length): The substr() method extracts a section of a string, starting from a specified index and extending for a given length afterward. It takes two numerical parameters: the starting index, the length - number of characters to extract.
+    Ex: let str = 'Chandan';
+        str.substr(1, 3);     //returns 'han'
+
+  
+  Replacing String inside a String:-
+  replace(): The replace() method replaces the specified text inside a string and returns a new string. It only change the first occurance of the string. To replace all matching strings, use a regular expression with the /g flag. The replace method is sensitively cased. To replace text insensitively, use the /i flag in the regular expression.
+    Ex: let str = 'Chandan Kumar Kumar';
+        str.replace('Kumar', 'Singh');      //returns 'Chandan Singh Kumar'
+        str.replace(/Kumar/g, 'Singh');      //returns 'Chandan Singh Singh'
+        str.replace(/KuMaR/gi, 'Singh');      //returns 'Chandan Singh Singh'
+
+  
+  Trimming a String:-
+  trim(): trim() method removes the extra whitespace from both ends of a string.
+    Ex: let str = '                     Chandan Kumar                     ';
+        str.trim();     //returns 'Chandan Kumar'
+
+  
+  concat(): the concat() method adds the string argument to the function calling string without modifying the original string. It takes two arguments: the text taht would separate the string, the string to add.
+    Ex: let str = 'Chandan Kumar';
+        str.concat(' ', 'Singh');     //returns 'Chandan Kumar Singh'
+
+
+    Note:
+    -- The only difference of the indexOf() and search() method is that the indexOf() method cannot take regular expressions as parameter.
+        The search method is sensitively cased. To search a text insensitively, use a simple regular expression the /i flag.
+        For Example:
+          let str = 'Chandan';  
+          str.indexOf('A');            // returns -1
+          str.search('a');            // returns 2      
+          str.search(/A/i);          // returns 2
+
+    -- No method modify the original string. Since, string is an immutable primitive data type. So it might create another string or return new string but impossible to modify or change the original string.
+    -- If you omit(leave) the second value of slice(), substring() and substr(), they will return the rest of the string.
+
+
+14. JavaScript Scope: The scope is the current context of execution in which values and expressions are "visible" or can be referenced. If a variable or expression is not in the current scope, it will not be available for use. Scopes can also be layered in a hierarchy, so that child scopes have access to parent scopes, but not vice versa.
+            JavaScript has the following kinds of scopes:
+            -- Global scope: The default scope for all code running in script mode.
+            -- Module scope: The scope for code running in module mode.
+            -- Function scope: The scope created with a function.
+            
+            In addition, variables declared with let or const can belong to an additional scope:
+            Block scope: The scope created with a pair of curly braces (a block).
+                         Blocks only scope let and const declarations, but not var declarations.
+            For Ex: 
+                    {
+                      var x = 1;
+                    }
+                    console.log(x); // 1
+             But,
+                    {
+                      let x = 1;
+                    }
+                    console.log(x); // Error: x is not defined
+                    {
+                      var x = 1;
+                    }
+                    console.log(x); // Error: x is not defined                                   
+
+
+
+15. JavaScript Varible Scope: The accessibility of variables is defined by their scope.   
+                              In JS, there are 2 varibles scopes: Global Scope & Local Scope.
+            Global Variables: Any variable that is declared outside a function has a global scope. A global variables can be accessed by all functions and scripts in a document.
+                            Also, any variable that is initialized or has been assigned a value inside a function wihtout being declared first will be global.
+                            Ex: variable-scopping.js
+
+            Local Variables:   Any variable that is 'declared' inside a function has a local scope. A local Variable can be only accessed by the function where it was declared.
+                            Ex: variable-scopping.js            
+
+    Note: Functions are also variables, therefore the rules mentioned above always apply to functions. So, Function defined at the Global Scope Called 'Global Fun' whereas function defined inside a function called 'Local Function' 
+                            Ex: variable-scopping.js
+
+
+16. Hoisting: In JavaScript, hoisting is the default behavior of delcaring any variables, functions or classes to the top.
+              Or JavaScript Hoisting refers to the process whereby(Jissa in Hindi) the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.
+              
+            Variable declartions are always executed first before any code is execute in the current scope.
+            For Ex:
+              fruit = 'mango';
+              console.log(fruit);
+              var fruit;          // returns 'mango'
+            Although, the var fruit declaration statement is at the bottom of the code, it was still executed first.
+            This behavior is called hoisting.
+
+            let and const hoisting
+            Variables declared with let and const are also hoisted but, unlike var, are not initialized with a default value i.e. undefined. An exception will be thrown if a variable declared with let or const is read before it is initialized.
+            For Ex:
+              console.log(numVar); // undefined
+              var numVar = 6; // Initialization and declaration with var
+
+              console.log(numLet); //Throws ReferenceError:Cannot access 'numLet' before initialization
+              let numLet = 6;    // 
+              
+              console.log(numConst); // undefined
+              const numConst = 6; // Throws ReferenceError:Cannot access 'numConst' before initialization
+              
+
+    Note: 
+      --In JavaScript, variable initialization are not hoisted, only declarations are hoisted.
+        This means that initialization doesn't happen until the associated line of code is executed.
+      -- As we already know we cannot expect any valid value from the variable before initialization except undefined.
+         Until that point in the execution is reached the variable has its default initialization (undefined for a variable declared using var or let, otherwise uninitialized using const & throw SyntaxError: Missing initializer in const declaration).
+         For Ex: Visit hoisting.js 
+        We can only get the expected valid value, only if the variable was originally initialized then declared, or declared and initialized in the same line.
+      -- We can't say any variable is declared in JavaScript till it has been declared using any of these predefined keyword: var, let or const. A variable can never be declared without using these keywords but inialized. 
+        For Ex: 
+                var a;        // variable 'a' is only declared not initialized
+                b = 10;      // variable 'b' is only initialized not declared
+                var c = 20; //  variable 'c' is declared and initialized Or we can also say that variable 'c' is declare and initialize in the same line.
+
+    
+17. AJAX: AJAX stands for Asynchronous JavaScript and XML. Although X in Ajax stands for XML, JSON is preferred over XML nowadays because of its many advantages. Both JSON and XML are used for packaging information in the Ajax model.

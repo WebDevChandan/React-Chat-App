@@ -1,0 +1,25 @@
+Basic Syntax
+Timeout and Interval
+Bitwise Operators
+Regular Expressions
+Exception Handling Statements
+Variable Scope
+Hoisting
+Strict Mode
+this keyword
+Arrow Function
+Classes
+Json
+DOM
+BOM
+AJAX 
+DOM Manipulation
+Fetch API / Ajax
+Async Await
+Event Listeners
+ES6+ JavaScript
+Promises
+Classes
+Array Methods
+Scoping
+Closures
