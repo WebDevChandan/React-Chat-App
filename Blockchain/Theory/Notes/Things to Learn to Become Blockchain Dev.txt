@@ -1,0 +1,11 @@
+Things to Learn to Become Blockchain Dev:-
+
+Learn Solidity
+
+Learn Rust
+
+How to deploy smart contracts
+
+Hwo to mint NFT Collection 
+
+Build a DAO
