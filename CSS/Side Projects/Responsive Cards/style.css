@@ -1,0 +1,137 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:montserrat;
+}
+
+body{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	min-height:100vh;
+}
+
+.cards-container{
+	position:relative;
+	width:100%;
+	height:600px;
+	/*background:#056521;*/
+	padding:25px 50px;
+}
+.cards-container .cards{
+	position:relative;
+	width:100%;
+	height:100%;
+	/* background:yellow; */
+	padding:10px;
+	display:flex;
+	justify-content: space-around;
+	align-items:center;
+	flex-wrap: wrap;
+}
+
+.cards .card{
+	position:relative;
+	width:350px;
+	height:450px;
+	border:10px solid #056521;
+	border-radius:20px;
+	padding:10px;
+	margin: 10px;
+}
+.cards .card .card-items
+{
+	position:absolute;
+	top:0%;
+	left:0%;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		flex-direction:column;
+	padding:5px 10px;	
+}
+.card-items .card-icon{
+	width:100%;
+	padding:5px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.card-items .card-icon img{
+	width:100px;
+	height:100px;
+}
+.card-items .card-title{
+    text-transform: uppercase;
+    color: #056521;
+    font-size: 1.7rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.card-items .arrow{
+	position:relative;
+}
+.card-items .arrow {
+	padding:10px 10px;
+	height:50px;
+	/*border:2px solid black;*/
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+.card-items .arrow div{
+	width: 0px;
+    height: 40px;
+    border: 2px solid #056521;
+}
+.card-items .arrow div::before {
+	transform: translate(-2px, 30px) rotate(-48deg);
+    text-align: center;
+    display: block;
+    content: '';
+    width: 15px;
+    box-shadow: 0 0 0px 2px #056521; 
+    margin: 0 auto;
+}
+.card-items .arrow div::after {
+	transform: translate(-13px, 30px) rotate(48deg);
+    text-align: center;
+    display: block;
+    content: '';
+    width: 15px;
+    box-shadow: 0 0 0px 2px #056521;
+    margin: 0 auto;
+}
+
+.card-items .card-info{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 5px;
+	width:250px;
+}
+.card-items .card-info .sub-title{
+   line-height: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.card-items .card-info ul{
+	margin-left:20px;
+}
+
+.card-items .card-info ul li{
+	font-size:.8rem;
+	color:#056521;
+	font-weight:bold;
+}
+.card-info .quote{
+	text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 10px;
+    color: #056521;
+}

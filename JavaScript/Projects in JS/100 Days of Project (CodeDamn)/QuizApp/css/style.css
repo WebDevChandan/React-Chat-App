@@ -1,0 +1,175 @@
+/* 
+------ 	Global Styling 	--------
+*/
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+:root{
+	--primary:#218380;
+}
+body{
+	font-family:verdana;
+	font-style:normal;
+	font-size:16px;
+	color: #000;
+	overflow: hidden;
+}
+h2{
+	font-size:24px;
+	color:#000;
+}
+
+/* 
+--------Header Styling 	---------
+*/
+header{
+    height: 70px;
+    background:var(--primary);
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding:20px 50px 20px 20px;
+    color:#fff;
+}
+header .vwhighScores{
+	cursor:pointer;
+}
+
+/*
+------	Main Container Styling-----
+*/
+main{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*background: red;*/
+	min-height: 90vh;
+}
+main .container{
+	/*background: red;*/
+	max-width: 750px;
+	width: 750px;
+	height: auto;
+	margin: 0 auto;
+	border-radius: 30px;
+	padding: 20px 10px 25px 25px;
+	box-shadow: 5px 5px 5px 0px rgb(0 0 0 / 10%), 5px 5px 10px 0px rgb(0 0 0 / 10%), 15px 5px 10px 0px rgb(0 0 0 / 10%);
+    border-width: 2px 0px 0px 2px;
+    border-style: solid;
+    border-color: #7a777740;
+}
+main .container .sub-container{
+	width: 100%;
+	padding: 35px 10px 35px 35px;
+}
+main .container .sub-container .content{
+	width: 100%;
+	padding-top:10px;
+}
+.content h2, p, button{
+	margin: 5px 0 15px;
+}
+.content .btn{
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	background: var(--primary);
+	color: #fff;
+	cursor: pointer;
+	outline: none;
+}
+
+/*-------------
+Question Page styling
+--------------*/
+.content .opt-list{
+	max-width: 100%;
+	width: 90%;
+	height: auto;
+/*	background: red;*/
+	padding: 5px;
+}
+.content .opt-list li{
+	width: 100%;
+	list-style: none;
+	height: auto;
+	background: var(--primary);
+	padding: 10px;
+	margin: 10px 0;
+	border-radius: 10px;
+}
+.content .opt-list li .option{
+	color: #fff;
+	cursor: pointer;
+}
+.content .answer{
+	padding: 15px 0px 0px;
+	max-width: 100%;
+	width: 90%;
+	text-align: left;
+	border-top: 2px groove #dedddd;
+}
+
+/*
+All Done Page Styling
+*/
+.allDone{
+	width: 500px!important;
+}
+.content .score{
+	margin: 30px 0;
+}
+.content .initials-box{
+	border: 2px groove #dedddd;
+	border-radius: 2px;
+	padding: 10px;
+	outline: none;
+	font-size: 16px;
+	width: 110px;
+}
+.content .submit-btn{
+	font-size: 1rem;
+	padding: 15px;
+	border-radius: 10px;
+}
+
+/*
+Highscores Page styling
+*/
+.swhighScores{
+	width: 320px!important;
+}
+.score-list{
+	width: 100%;
+	padding: 10px 0px;
+	margin: 0 40px;
+}
+
+
+/*For JS Styling */
+.hide{
+	display: none;
+}
+
+/*------
+Media Queries
+-----*/
+@media(max-width: 425px){
+	main .container{
+	padding-top: 10px;	
+	margin: 0 10px;
+	}
+	main .container .sub-container{
+		padding: 0px;
+	}
+	.content p{
+		font-size: .9rem;
+	}
+	.content h2{
+		font-size: 1.2rem;
+	}
+}
