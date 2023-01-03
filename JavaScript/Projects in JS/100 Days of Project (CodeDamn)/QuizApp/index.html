@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Codedamn - Quiz Project</title>
+</head>
+<body>
+
+<!-- Header Start -->
+<header>
+    <div> 
+		<span class="vwhighScores ">View Highscores</span> <i class="fas fa-hand-point-left fa-lg"></i>
+    </div> 
+	
+	<div>
+        <p class="timer">Time:</p>
+     </div>
+</header>
+    
+
+
+
+<!-- Main Start -->
+<main>
+		
+<!-- Starting Page	 -->
+<div class="container start">
+	<div class="sub-container">
+			<div class="content">
+			<h2>Coding Quiz Challenge</h2>
+			<p>Try answer to following code-related questions within the time limit.</p>	
+			<p>Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>	
+			<button class="start-btn btn">Start Quiz</button>
+		</div>
+	</div>	
+</div>
+
+
+<!-- Question Page -->
+<div class="container questions hide">
+	<div class="sub-container">
+		<div class="content">
+			<h2 class="questHead"><!-- Commonly used data types DO NOT include: --></h2>
+				
+			<ul class="opt-list">
+				<li>
+					<span class="option" id="option-1"></span>
+				</li>
+				
+				<li>
+					<span class="option" id="option-2"></spa>
+				</li>
+				
+				<li>
+					<span class="option" id="option-3"></span>
+				</li>
+				
+				<li>
+					<span class="option" id="option-4"></span>
+				</li>
+
+			</ul>
+
+			<p class="optResult"></p>	
+		</div>
+	</div>	
+</div>
+
+
+
+<!-- All Done! Page -->
+<div class="container allDone hide">
+	<div class="sub-container">
+		<div class="content">
+			<h2>All done!</h2>
+				
+			<p class="score"></p>	
+			
+				
+			<label>Enter initials:</label>
+			<input class="initials-box" type="text" name="initials" value="" placeholder="CH-11"></input>
+			<input class="submit-btn btn" type="submit" value="Submit"></input>
+		</div>
+	</div>	
+</div>
+
+
+<!-- HighScores Page -->
+<div class="container swhighScores hide">
+	<div class="sub-container">
+		<div class="content">
+			<h2>Highscores</h2>
+				
+			<ol class="score-list">
+				<li><!-- SJ - 43 --></li>
+				<li>AJ - 38</li>
+			</ol>	
+			<button class="back-btn btn">Go Back</button>
+			<button class="clear-btn btn">Clear Highscores</button>
+		
+		</div>
+	</div>	
+</div>
+	
+</main>
+    
+	<script src="js/script.js"></script>
+</body>
+</html>

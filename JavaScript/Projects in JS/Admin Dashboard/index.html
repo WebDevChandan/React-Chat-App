@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Admin Dashboard</title>
+    <!-- CSS StyleSheet -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Material Icons CDN -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet">
+</head> 
+<body>
+    <!-- LEFT SIDEBAR -->
+    <aside>
+
+        <div class="logo-sec">
+            <div class="lg-img">
+                <img src="./image/logo.png" alt="Logo" >
+            </div>
+            <h2>EGA<span>TOR</span></h2>
+        </div>
+
+
+        <div class="sdBar-items-sec">
+            <div class="sdBar-items">
+                <div class="sdBar-item">
+                    <a href="#"> <span class="material-icons-sharp">
+                        dashboard
+                        </span>
+                        <h3>Dashboard</h3>
+                    </a>
+                </div>
+                <div class="sdBar-item">
+                    <a href="#"> <span class="material-icons-sharp">
+                        person_outline
+                        </span>
+                        <h3>Customers</h3>
+                    </a>
+                </div>
+                <div class="sdBar-item">
+                    <a href="#"> <span class="material-icons-sharp">
+                        receipt_long
+                        </span>
+                        <h3>Orders</h3>
+                    </a>
+                </div>
+                <div class="sdBar-item">
+                    <a href="#"> <span class="material-icons-sharp">
+                        insights
+                        </span>
+                        <h3>Analytics</h3>
+                    </a>
+                </div>
+                <div class="sdBar-item">
+                    <a href="#"> <span class="material-icons-sharp">
+                        mail_outline
+                        </span>
+                        <h3>Messages</h3>
+                     <span class="message-count">26</span></a>
+                </div>
+                <div class="sdBar-item">
+                    <a href="#"> <span class="material-icons-sharp">
+                        inventory
+                        </span>
+                        <h3>Products</h3>
+                    </a>
+                </div>
+                <div class="sdBar-item">
+                    <a href="#"> <span class="material-icons-sharp">
+                        report_gmailerrorred
+                        </span>
+                        <h3>Reports</h3>
+                    </a>
+                </div>
+                <div class="sdBar-item">
+                    <a href="#"> <span class="material-icons-sharp">
+                        settings
+                        </span>
+                        <h3>Settings</h3>
+                    </a>
+                </div>
+                <div class="sdBar-item">
+                    <a href="#"> <span class="material-icons-sharp">
+                        add
+                        </span>
+                        <h3>Add Product</h3>
+                    </a>
+                </div>
+                <div class="sdBar-item">
+                    <a href="#"> <span class="material-icons-sharp">
+                        logout
+                        </span>
+                        <h3>Logout</h3>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </aside>
+
+
+<!-- DASHBOARD SECTION -->
+<div class="dashboard-sec">
+
+    <div class="dash-head">
+        <h1>Dashboard</h1>
+        <div class="calendar">
+            <input type="date" name="date">
+        </div>
+    </div>
+
+    <div class="dash-cards">
+
+        <div class="dash-card">
+            <div class="card-details">
+                <div class="sales-icon dash_icon">
+                    <span class="material-icons-sharp">
+                        analytics
+                    </span>
+                </div>
+                <p class="card-title">Total Sales</p>
+                <span class="card-revenue">$25,024</span>
+                <p class="card-timeline">Last 24 Hours</p>
+            </div>
+            <div class="card-stats">81%</div>
+        </div>
+        <div class="dash-card">
+            <div class="card-details">
+                <div class="expenses-icon dash_icon">
+                    <span class="material-icons-sharp">
+                        bar_chart
+                    </span>
+                </div>
+                <p class="card-title">Total Expenses</p>
+                <span class="card-revenue">$14,160</span>
+                <p class="card-timeline">Last 24 Hours</p>
+            </div>
+            <div class="card-stats">62%</div>
+        </div>
+        <div class="dash-card">
+            <div class="card-details">
+                <div class="income-icon dash_icon">
+                    <span class="material-icons-sharp">
+                        stacked_line_chart
+                    </span>
+                </div>
+                <p class="card-title">Total Income</p>
+                <span class="card-revenue">$10,864</span>
+                <p class="card-timeline">Last 24 Hours</p>
+            </div>
+            <div class="card-stats">44%</div>
+        </div>
+    </div>
+
+    <div class="dash-table">
+        <h3>Recent Orders</h3>
+        <div class="product-table">
+            <table>
+                <tr>
+                    <th>Product Name    </th>
+                    <th>Product Number  </th>
+                    <th>Payment </th>
+                    <th> Status  </th>
+                </tr>
+
+                <tr>
+                    <td>Foldable Mini Drone</td>
+                    <td>85831</td>
+                    <td>Due</td>
+                    <td class="pending">Pending</td>
+                    <td>Detials</td>
+                </tr>
+                <tr>
+                    <td>LARVENDER KF102 Drone</td>
+                    <td>36378</td>
+                    <td>Refunded</td>
+                    <td class="declined">Declined</td>
+                    <td>Detials</td>
+                </tr>
+                <tr>
+                    <td>Ruko F11 Pro Drone</td>
+                    <td>49347</td>
+                    <td>Due</td>
+                    <td class="pending">Pending</td>
+                    <td>Detials</td>
+                </tr>
+                <tr>
+                    <td>Drone with CAmera Drone</td>
+                    <td>96996</td>
+                    <td>Paid</td>
+                    <td class="delivered">Delivered</td>
+                    <td>Detials</td>
+                </tr>
+                <tr>
+                    <td>GPS 4k Drone</td>
+                    <td>22821</td>
+                    <td>Paid</td>
+                    <td class="delivered">Delivered</td>
+                    <td>Detials</td>
+                </tr>
+                <tr>
+                    <td>DJI Air 2$</td>
+                    <td>81475</td>
+                    <td>Due</td>
+                    <td class="pending">Pending</td>
+                    <td>Detials</td>
+                </tr>
+                <tr>
+                    <td>Lozenge Drone</td>
+                    <td>00482</td>
+                    <td>Due</td>
+                    <td class="delivered">Delivered</td>
+                    <td>Detials</td>
+                </tr>
+            </table>
+        </div>
+        <p id="showAll">Show All</p>
+    </div>
+</div>
+
+    <!-- RIGHT SIDEBAR -->
+    <div class="right-sec">
+        <div class="right-sec-items">
+
+            <div class="prof-sec">
+                <div class="switcher">
+                    <span class="material-icons-sharp">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+                <div class="profile">
+                    <div class="profile-detail">
+                        <p>Hey,<span class="profile-title"> Chandan</span></p>
+                        <span class="profile-role">Admin</span>
+                    </div>
+                    <div class="profile-img">
+                        <img src="./image/profile-1.jpg" alt="profile-1">
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-updates right-side-box">
+                <h3>Recent Updates</h3>
+                <div class="update-box box">
+                    <div class="upd-items items">
+
+                        <div class="upd-item">
+                            <div class="upd-profile-pic">
+                                <img src="./image/profile-2.jpg" alt="profile-2">
+                            </div>
+                            
+                            <div class="upd-detail">
+                                <p><span class="upd-title">Mike Tyson</span>receive his order of Night lion tech GPS drone.</p>
+                                <span class="upd-time">2 minutes ago</span>
+                            </div>
+                        </div>
+
+                        <div class="upd-item">
+                            <div class="upd-profile-pic">
+                                <img src="./image/profile-3.jpg" alt="profile-3">
+                            </div>
+                            
+                            <div class="upd-detail">
+                                <p><span class="upd-title">Mike Tyson</span>receive his order of Night lion tech GPS drone.</p>
+                                <span class="upd-time">2 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="upd-item">
+                            <div class="upd-profile-pic">
+                                <img src="./image/profile-4.jpg" alt="profile-4">
+                            </div>
+                            
+                            <div class="upd-detail">
+                                <p><span class="upd-title">Mike Tyson</span>receive his order of Night lion tech GPS drone.</p>
+                                <span class="upd-time">2 minutes ago</span>
+                            </div>
+                        </div>
+                        
+                    </div>  
+                </div>
+
+            </div>
+
+            <div class="sales-analytics right-side-box">
+                <h3>Sales Analytics</h3>
+
+                <div class="sales-box box">
+                    <div class="sales-items ">
+                        <div class="sales-item">
+                            <div class="icon">
+                                <span class="material-icons-sharp">
+                                    shopping_cart
+                                </span>
+                            </div>
+                            <div class="sales-item-title">
+                                <p class="sales-title">ONLINE ORDERS</p>
+                                <span class="sales-time">Last 24 Hours</span>
+                            </div>
+                            <p class="increment">+39%</p>
+                            <p class="sales-total">3849</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sales-box box">
+                    <div class="sales-items ">
+                        <div class="sales-item">
+                            <div class="icon bag_icon">
+                                <span class="material-icons-sharp">
+                                    shopping_bag
+                                </span>
+                            </div>
+                            <div class="sales-item-title">
+                                <p class="sales-title">OFFLINE ORDERS</p>
+                                <span class="sales-time">Last 24 Hours</span>
+                            </div>
+                            <p class="increment decrement">-17%</p>
+                            <p class="sales-total">1100</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sales-box box">
+                    <div class="sales-items ">
+                        <div class="sales-item">
+                            <div class="icon person_icon">
+                                <span class="material-icons-sharp">
+                                    person
+                                </span>
+                            </div>
+                            <div class="sales-item-title">
+                                <p class="sales-title">NEW CUSTOMER</p>
+                                <span class="sales-time">Last 24 Hours</span>
+                            </div>
+                            <p class="increment">+26%</p>
+                            <p class="sales-total">849</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="add-product">
+                <div class="btn-box">
+                    <span class="material-icons-sharp">
+                        add
+                    </span>
+                    <span class="btn-txt">
+                        Add Product
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>
