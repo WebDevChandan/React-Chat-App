@@ -1,4 +1,4 @@
-// ==================================== Insert in MaxBinaryHeap ====================
+// ==================================== ⭐Insert in MaxBinaryHeap⭐ ====================
 
 /* Visualization:-
 
@@ -28,7 +28,7 @@ Insert(55):
                  39     41
                 /  \   /  \
               18   27 12   33   
-array: [54, 39, 41, 18, 27, 12, 33]
+array: [55, 39, 41, 18, 27, 12, 33]
 
 Insert(32):
                     55
@@ -53,9 +53,9 @@ array: [54, 39, 41, 32, 27, 12, 33, 18]
 /* Approach:-
 -- Keep in mind, 
     - MaxBinaryHeap means Parent node always be Greater than Child node.
-    - Inserting an element in maxBinaryHeap tree, it will begin by adding as the last node (leaf node) of the tree.
-    - We're going arrange MaxBinaryHeap tree in Array Data Structure. Means, New element will be added at the beginning of array.
-    - In array, To find parent of any Inserted node, we'll use floored value of (n-1)/2. It will be the index of parent element.
+    - Inserting an element in maxBinaryHeap tree, will begin by adding as the last node (leaf node) of the tree. Since, we're pushing newNode to the array.
+    - We're going to arrange MaxBinaryHeap tree in Array Data Structure. Means, New element will be added at the beginning of array.
+    - In array, To find parent of any Inserted node, we'll use floored value of (n-1)/2. It will give the index of its parent element.
 
 -- Push new Element to the array.
 
@@ -63,52 +63,52 @@ array: [54, 39, 41, 32, 27, 12, 33, 18]
 
 -- Store index of new Element in 'idx' and Store value of new Element in 'element' variable.
 
--- Start a Loop till 'idx' of inserted Element =< 0
+-- Start a Loop till 'idx' of inserted Element <= 0
     - Store index of Parent Element of inserted element in 'parentIdx' and Store value of parent Element in 'parent' variable.
     - Check, if (inserted 'element' is smaller than its 'parent') break the loop, return the array.
     - Otherwise, Start Swapping:
         - At index of Inserted Element <-- Set Parent Element 
         - At index of Parent Element <-- Set Inserted Element
-    - Assign 'parentIdx' to the 'idx' of Inserted Element    (As Inserted element moving Up along the tree, started acquiring index of parent Element, which lead in the decrement of it 'idx') 
+        - Assign 'parentIdx' to the 'idx' of Inserted Element    (As Inserted element moving Up along the tree, started acquiring index of parent Element, which lead in the decrement of it 'idx') 
+
+
+class MaxBinaryHeap {
+    constructor() {
+        this.value = [41, 39, 33, 18, 27, 12];
+    }
+
+    insert(element){
+        this.value.push(element);
+        const showMaxBinaryHeap = this.bubbleUp();
+        return showMaxBinaryHeap;
+    }
+
+    bubbleUp(){
+        let idx = this.value.length-1;
+        const element = this.value[idx];
+
+        while(idx>0){
+            let parentIdx = Math.floor((idx-1)/2);
+            const parent = this.value[parentIdx];
+            if(element<=parent) break;
+            
+            //Start Bubbling Up (Swapping)
+            this.value[idx] = parent;
+            this.value[parentIdx] = element;
+            idx = parentIdx;
+        }
+            return this.value;
+    }
+}
+
+let maxBinaryHeap = new MaxBinaryHeap();
+maxBinaryHeap.insert(55);
 
 */
 
-// class MaxBinaryHeap {
-//     constructor() {
-//         this.value = [41, 39, 33, 18, 27, 12];
-//     }
-
-//     insert(element){
-//         this.value.push(element);
-//         const showMaxBinaryHeap = this.bubbleUp();
-//         return showMaxBinaryHeap;
-//     }
-
-//     bubbleUp(){
-//         let idx = this.value.length-1;
-//         const element = this.value[idx];
-
-//         while(idx>0){
-//             let parentIdx = Math.floor((idx-1)/2);
-//             const parent = this.value[parentIdx];
-//             if(element<=parent) break;
-            
-//             //Start Bubbling Up (Swapping)
-//             this.value[idx] = parent;
-//             this.value[parentIdx] = element;
-//             idx = parentIdx;
-//         }
-//             return this.value;
-//     }
-// }
-
-// let maxBinaryHeap = new MaxBinaryHeap();
-// maxBinaryHeap.insert(55);
 
 
-
-
-// ==================================== Remove (ExtractMax) in MaxBinaryHeap ====================
+// ==================================== ⭐Remove (ExtractMax) in MaxBinaryHeap⭐ ====================
 /* Visualization:-
 
                     41 (1)
@@ -144,40 +144,22 @@ extractMax():
                 /  \      \
               18   12      
 array: [39, 27, 33, 18, 12]
-
-Insert(32):
-                    55
-                   /   \
-                 39     41
-                /  \   /  \
-              18   27 12   33
-             /
-            32                  <-- Adding
-                    55
-                   /   \
-                 39     41
-                /  \   /  \
-              32   27 12   33   <-- Bubbling
-             /
-            18
-                   
-array: [54, 39, 41, 32, 27, 12, 33, 18]
 */
 
 /* Approach:-
 -- Store a maxBinaryHeap into an Array or List
 
--- ExtractMax: In maxBinaryHeap heap Parent is always > Child. So root will always be the highest Element in maxBinaryHeap. This is what we've to Remove or say Extract i.e. why it's called ExtractMax.
+-- ExtractMax: In maxBinaryHeap heap Parent is always > Child. So root will always be the Greatest Element in maxBinaryHeap at the end. This is what we've to Remove or say Extract i.e. why it's called ExtractMax.
 
--- Store root Element to 'max' and Pop out the last element from the array (means, last node of Bineary heap) and store it in 'end' variable.
+-- Store root Element to 'max' and Pop out the last element from the array (means, minimum value node of MaxBineary heap) and store it in 'end' variable.
 
--- If (length of array or say BinaryHeap is Greater than 0 then only we can perform extractMax or Remove Operaition on Maximum Element)
-    -- Set the End Element at the root of BinaryHeap. (This will cause removal of Old Root or Maximum Element from the Tree.)
+-- If (length of array or say MaxBinaryHeap is Greater than 0 then only we can perform extractMax or Remove Operation on Maximum Element)
+    -- Set the 'End' Element at the root of BinaryHeap. (This will cause removal of Old Root or Maximum Element from the Tree.)
         This is how remove Operaition has complete. Now we've to arrange current Binary Tree in such a way that will look like a Valid MaxBinaryHeap.
 
 -- Start sinkingDown or say Bubbling Down. 
     -- Assign 0 to 'idx' variable. This would be the index of  current root Element that moveout from last to top in BinaryHeap.
-    -- Store that current root Element to an 'element' variable and current length of the array or current depth of BinaryHeap intor 'length' variable.
+    -- Store that current root Element to an 'element' variable and current length of the array or current depth of BinaryHeap into 'length' variable.
 
     -- Start a loop.
         -- Store index of left Child of 'element' into 'leftChildIdx'(2n+1) & right Child into 'rightChildIdx'(2n+2).
@@ -196,8 +178,6 @@ array: [54, 39, 41, 32, 27, 12, 33, 18]
             Set current 'element' at the index of its child element's index
             Set child Element at the index of its parent element's or say current 'element''s index
 
-        -- Set index of child Element to the index of it's parent Element or say current 'element'. 
-
 */
 // class MaxBinaryHeap {
 //     constructor() {
@@ -210,7 +190,7 @@ array: [54, 39, 41, 32, 27, 12, 33, 18]
 //         if(this.value.length>0){
 //             this.value[0] = end;
 //             this.sinkDown();
-//             return max;
+//             console.log(`maxExtractedValue: ${max}, Final Arranged MaxBinarHeap: [${this.value}]`);
 //             }
 //     }
 
@@ -249,8 +229,7 @@ array: [54, 39, 41, 32, 27, 12, 33, 18]
 // }
 
 // let maxBinaryHeap = new MaxBinaryHeap();
-
-
+// maxBinaryHeap.extractMax();
 
 
 
@@ -267,7 +246,23 @@ array: [54, 39, 41, 32, 27, 12, 33, 18]
 
 array: ["Hi", "There", "This", "Is", "Chandan"]
 
-*/
+
+Approach:-
+-- Info: 
+    - Lower Number means Higher priority. Hence we're going to use MinBinary Heap.
+    - Every Element/Node has some priority value associated with it. 
+    - Element with higher Priority are served before elements with lower priorities.
+    - Here, value doesn't matter, MinHeap is constructed & arranged Elements using Priority.
+
+-- First we need to construct MinBinary Heap in array representation  
+    - 1st adding Node (consisting value associated with Priority) to the value Property i.e. an empty array of class PriorityQueue. This method is called enqueue. 
+    - 2nd After adding Each Node, we need to arrange that node in such a way to build a MinHeap.
+
+-- Second, we need to get the Element/Node having Highest Priority i.e. the node having value associated with minimum Priority (the root of MinHeap).
+    - Since, Our MinBinary Heap is represented in an Array. So to extract the minimum priority value node/element from the array/MinHeap, we'll perform Dequeue Operation.
+    - Then, Arrange all the rest elements in heap as to form an another MinBinaryHeap.
+
+// Code Implementation
 class Node {
     constructor(val, priority) {
         this.val = val;
@@ -279,7 +274,7 @@ class PriorityQueue {
     constructor() {
         this.value = [];
     }
-    
+    // Adding to create MinBinary Heap
     enqueue(value, priority){
         let newNode = new Node(value, priority);
         this.value.push(newNode);
@@ -287,12 +282,13 @@ class PriorityQueue {
         // return this.value;
     }
 
+    // Bubbling to adjust as MinBinary Heap
     bubbleUp(){
         let idx = this.value.length-1,
             element = this.value[idx];
 
         while(idx>0){
-            let parentIdx = Math.ceil((idx-1)/2),
+            let parentIdx = Math.floor((idx-1)/2),
             parent = this.value[parentIdx];
             if(element.priority >= parent.priority) break;
 
@@ -301,7 +297,8 @@ class PriorityQueue {
             idx = parentIdx;
         }
     }
-    
+
+    // Removing from MinBinary Heap
     dequeue(){
         const min = this.value[0],
             end = this.value.pop();
@@ -312,7 +309,7 @@ class PriorityQueue {
         return min;
     }
 
-    //BubblingDown or say sinkDown
+    //BubblingDown or say sinkDown to adjust as MinBinary Heap
     sinkDown(){
         let idx = 0,
             element = this.value[0],
@@ -350,8 +347,14 @@ class PriorityQueue {
 
 let priorityQueue = new PriorityQueue();
 
+// For Input: 
 priorityQueue.enqueue("This",3);
 priorityQueue.enqueue("Chandan",5);
 priorityQueue.enqueue("There",2);
 priorityQueue.enqueue("Hi",1);
 priorityQueue.enqueue("is",4);
+
+// For Output: To get the Highest Priority Element/Node as per Calling of dequeue();
+priorityQueue.dequeue();
+
+*/
