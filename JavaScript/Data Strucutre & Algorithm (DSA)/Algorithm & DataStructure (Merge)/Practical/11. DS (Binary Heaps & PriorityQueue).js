@@ -234,7 +234,7 @@ array: [39, 27, 33, 18, 12]
 
 
 
-// ==================================== PRIORITY QUEUE ====================
+// ==================================== ⭐ PRIORITY QUEUE ⭐ ====================
 /* Visualization:-
 
                     Hi (1)
@@ -357,4 +357,30 @@ priorityQueue.enqueue("is",4);
 // For Output: To get the Highest Priority Element/Node as per Calling of dequeue();
 priorityQueue.dequeue();
 
+*/
+
+
+
+//====================== Naive(Unoptimized) Priority Queue ================
+/*
+// CODE IMPLEMENTATION:-
+class PriorityQueue {
+  constructor(){
+    // work as the visited array
+    this.values = [];
+  }
+  enqueue(val, priority) {
+      // Going to accept value along with their Priority Order. 
+    this.values.push({val, priority});
+    this.sort();
+  };
+  dequeue() {
+      // dequeue the Lowest priority first.
+    return this.values.shift();
+  };
+  sort() {
+      // Going to sort each value according to their priority. Lowest priority will come at lower index number. Like we usually sort numbers of an array.
+    this.values.sort((a, b) => a.priority - b.priority);
+  };
+}
 */

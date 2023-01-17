@@ -1,0 +1,16 @@
+For Installing Dependencies of package.json from FrontEnd & Backend:-
+FrontEnd: Move to FrontEnd folder (cd frontend) --> npm install
+BackEnd: Move to BackEnd folder (cd backend) --> npm install
+
+FrontEnd:-
+To start development server: npm start
+React FrontEnd server run under localhost:3000
+
+BackEnd:-
+To start development server: npm start
+Node Backend server, here actually will run under localhost:5000 
+
+Informations:-
+👉🏻 When we create a Book actually on frontend will really stored somewhere, was stored on our backend server and when we reload the React app, we're fethching this data from that server and since the server runs on its own domain but technically of course on the same machine as our frontned, that request is super fast.
+👉🏻 In frontend we used functional component to build components. Although we can use class components as well.
+
