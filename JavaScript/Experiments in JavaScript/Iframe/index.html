@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IFRAME Experiment</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="iframe-container">
+      <iframe
+        style="border: 0"
+        class="website__interactive-element"
+        src="https://omegle.com"></iframe>
+      <!-- <img
+        src="https://assets.website-files.com/5ae9b1480219a3af5a27f4a5/60d8f72df09a51abc9ba7277_60ab7630b77af07df189d717_ese-effekt-starbicycle.jpeg"
+      /> -->
+        <!-- loadsrc="https://collabxpress.org/collabxpress.org/"
+        sandbo="allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin
+        allow-scripts allow-top-navigation allow-top-navigation-by-user-activation" -->
+      <!-- <div class="btn">Click Here</div> -->
+    </div>
+
+    <button id="accss_doc">Access Doc</button>
+    <script>
+      const assDoc = document.querySelector('#accss_doc');
+      const myFrame = document.querySelector('.iframe-container iframe');
+
+      assDoc.addEventListener('click', ()=>{
+        const iframeWindow = myFrame.contentWindow;
+        console.log(iframeWindow.document.body.innerHTML == "");
+      });
+    </script>
+
+    <!--         loading="eager"
+        alt="Star Bicycle Bike-Shop"
+        sizes="(max-width: 479px) 90vw, 70vw"
+        srcset="
+          https://assets.website-files.com/5ae9b1480219a3af5a27f4a5/60d8f72df09a51abc9ba7277_60ab7630b77af07df189d717_ese-effekt-starbicycle-p-800.jpeg   800w,
+          https://assets.website-files.com/5ae9b1480219a3af5a27f4a5/60d8f72df09a51abc9ba7277_60ab7630b77af07df189d717_ese-effekt-starbicycle-p-1080.jpeg 1080w,
+          https://assets.website-files.com/5ae9b1480219a3af5a27f4a5/60d8f72df09a51abc9ba7277_60ab7630b77af07df189d717_ese-effekt-starbicycle-p-1600.jpeg 1600w,
+          https://assets.website-files.com/5ae9b1480219a3af5a27f4a5/60d8f72df09a51abc9ba7277_60ab7630b77af07df189d717_ese-effekt-starbicycle.jpeg        1600w
+        " -->
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>
