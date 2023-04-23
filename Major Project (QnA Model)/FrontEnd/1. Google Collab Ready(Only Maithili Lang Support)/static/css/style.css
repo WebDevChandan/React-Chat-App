@@ -73,15 +73,15 @@ body {
 }
 
 .tutorial.step-2 {
-    transform: translate(-140%, 65%);
+    transform: translate(-140%, 81%);
 }
 
 .tutorial.step-3 {
-    transform: translate(140%, 192%);
+    transform: translate(140%, 224%);
 }
 
 .tutorial.step-4 {
-    transform: translate(-140%, 235%);
+    transform: translate(-140%, 267%);
 }
 
 .tour .carrot {
