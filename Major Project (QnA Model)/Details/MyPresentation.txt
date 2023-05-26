@@ -25,7 +25,7 @@ The second way is by uploading a text file.
 user just need to upload their text file and our model will fetch the text containing by their file.
 
 The third is by uploading text image.
-Although this feature is in beta since, our model current able to generate text for speicfic images. like this.
+Although this feature is in beta mode, so our model current able to generate text from speicfic images. like this.
 
-We also take care about user interface, by making it fully responsive across all device. Like now i'm going to run our model in mobile screen. Which proves our model will look perfectly across all devices in the world.
+We also take care about user interface, by making it fully responsive across all device. Like now i'm going to run our model in mobile screen. Which proves our model will look perfectly work across all devices.
 
