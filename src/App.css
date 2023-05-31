@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (max-width: 700px) {
+    .JoinPage {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .JoinContainer {
+        width: 100% !important;
+    }
+
+    .JoinContainer>img {
+        width: 20vw !important;
+    }
+
+    .JoinContainer>h1 {
+        font-size: 6vw !important;
+        width: 55vw !important;
+        padding: 3vw !important;
+    }
+
+    #joinInput {
+        width: 55vw !important;
+        padding: 3vw !important;
+        font-size: 4vw !important;
+        margin: 5vw !important;
+    }
+
+    .joinBtn {
+        width: 65vw;
+        width: 55vw !important;
+        font-size: 4vw !important;
+    }
+
+    .chatContainer {
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+    .chatBox {
+        height: 80% !important;
+    }
+
+    .inputBox {
+        height: 15vw !important;
+        position: absolute !important;
+        width: 100% !important;
+        bottom: 1vw !important;
+    }
+
+    .header {
+        height: 10% !important;
+    }
+
+    .header>h2 {
+        font-size: 5.5vw !important;
+    }
+
+    .header img {
+        width: 9vw !important;
+    }
+
+    .sendBtn>img {
+        width: 8vw !important;
+    }
+
+    .left,
+    .right {
+        font-size: 14px !important;
+    }
+
+    .messageBox {
+        padding: 3vw !important;
+        margin: 3vw !important;
+        border-radius: 1.5vmax !important;
+    }
+
+    .react-scroll-to-bottom--css-qnuit-1tj0vk3 {
+        bottom: 3vw !important;
+    }
+
+}
