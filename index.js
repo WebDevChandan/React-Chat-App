@@ -50,5 +50,5 @@ io.on("connect", (socket) => {
 
 
 server.listen(PORT, () => {
-    console.log("Server is working on http://localhost:" + PORT);
+    console.log("Working...");
 })
