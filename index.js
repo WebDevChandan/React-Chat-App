@@ -17,10 +17,10 @@ const server = http.createServer(app);
 
 const io = socketIO(server);
 
-const users = [{}];
+const users = {};
 
 //As io server in turn on, we've to pass a socket here
-io.on("connection", (socket) => {
+io.on("connect", (socket) => {
     console.log("new Connection");
 
     //data received as an object, here we're doing object destructuring.
@@ -40,7 +40,7 @@ io.on("connection", (socket) => {
 
     });
 
-    socket.on('disconnected', () => {
+    socket.on('disconnect', () => {
         socket.broadcast.emit('leave', { user: "Admin", message: `${users[socket.id]} left the Chat` });
         console.log(`User Left`);
     })
