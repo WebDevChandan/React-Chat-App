@@ -7,8 +7,8 @@ import close from '../../assets/close.webp';
 import Messages from '../Message/Messages'
 import ReactScrollToBottom from 'react-scroll-to-bottom'
 
-const ENDPOINT = "http://localhost:4000/";
 let socket;
+const ENDPOINT = "http://localhost:4000/";
 
 const Chat = () => {
 
@@ -21,7 +21,6 @@ const Chat = () => {
         document.getElementById('chatInput').value = "";
     }
 
-    console.log(messages);
     
     useEffect(() => {
         socket = socketIo(ENDPOINT, { transports: ['websocket'] });
@@ -39,24 +38,21 @@ const Chat = () => {
 
         socket.on('userJoined', (data) => {
             setMessages([...messages, data]);
-            console.log(data.message);
         });
 
         //Since, we're receiving data from the admin, So socket will be on
         //Admin set at the backed to send welcome message at 'welcom' event occur. So event i.e.'welcome' to receive msg would be same
         socket.on('welcome', (data) => {
             setMessages([...messages, data]);
-            console.log(`${data.user}: ${data.message}`);
         })
 
         socket.on('leave', ( data ) => {
             setMessages([...messages, data]);
-            console.log(data.message);
 
         })
 
         return () => {
-            socket.emit('disconnected');
+            socket.disconnect();
             socket.off();
         }
     }, []);
@@ -64,7 +60,6 @@ const Chat = () => {
     useEffect(() => {
         socket.on('sendMessage', (data) => {
             setMessages([...messages, data]);
-            console.log(data.user, data.message, data.id);
         })
 
         return () => {
@@ -81,7 +76,7 @@ const Chat = () => {
                     <a href="/"><img src={close} alt="close" /></a>
                 </div>
                 <ReactScrollToBottom className="chatBox">
-                    {messages.map((item, i) => <Messages user={item.id===id?"":item.user} message={item.message} classs={item.id===id?'right':'left'} />)}
+                    {messages.map((item, i) => <Messages user={item.id===id?"":item.user} message={item.message} classs={item.id===id?'right':'left'} key={i}/>)}
                 </ReactScrollToBottom>
                 <div className="inputBox">
                     <input onKeyPress={(event)=>event.key==="Enter"?send():null} type="text" id='chatInput' />

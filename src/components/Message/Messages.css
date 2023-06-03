@@ -10,11 +10,11 @@
 
 .right{
     float: right;
-    background-color: crimson;
+    background: linear-gradient(45deg, #3473f2, #32ccfe);
     color: #fff;
 }
 .left{
     float: left;
-    background-color: rgb(196, 255, 184);
-    color:#000;
+    background: linear-gradient(45deg, #964A00, #F2952F);
+    color:#fff;
 }

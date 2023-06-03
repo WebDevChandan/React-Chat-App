@@ -9,12 +9,12 @@
 
  .chatContainer {
      background-color: #fff;
-     height: 50%;
+     height: 90vh;
      width: 50%;
  }
 
  .header {
-     background-color: crimson;
+    background: linear-gradient(45deg, #3473f2, #32ccfe);
      height: 15%;
      display: flex;
      align-items: center;
@@ -34,6 +34,7 @@
      margin: 2.5vmax 1vmax;
      cursor: pointer;
      transition: all 0.3s;
+     filter: brightness(1) invert(1) saturate(1) hue-rotate(61deg);
  }
 
  .header img:hover {
@@ -57,11 +58,11 @@
      outline: none;
      font-size: 1rem;
      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     border-top: 0.2vmax solid rgba(41, 41, 41, 0.562);
+     border-top: 0.2px solid rgba(41, 41, 41, 0.562);
  }
 
  .sendBtn {
-     background-color: crimson;
+     background-color: #32ccfe;
      color: #fff;
      border: none;
      width: 21%;
@@ -75,7 +76,7 @@
  }
 
  .sendBtn:hover {
-     background-color: rgb(156, 13, 42);
+     background-color: #3473f2;
  }
 
  .sendBtn:hover img {

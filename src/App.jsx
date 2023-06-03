@@ -5,14 +5,12 @@ import Chat from './components/Chat/Chat.jsx';
 
 function App() {
   return (
-    <div className="App">
       <Router>
         <Routes>
           <Route path="/" element={<Join />} />
           <Route path="/chat" element={<Chat/>} />
         </Routes>
       </Router>
-    </div>
   );
 }
 
