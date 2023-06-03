@@ -3,7 +3,7 @@
     "name": "react-chat-app",
     "builds": [
         {
-            "src": "app.js",
+            "src": "index.js",
             "use": "@vercel/node"
         }
     ],
