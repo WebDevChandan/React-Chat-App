@@ -1,0 +1,10 @@
+@import "_variables";
+
+@import "./_header.scss";
+
+.contact {
+    // @include flexCenter(row, red);
+    @extend header;
+    background: lightcoral ;
+    width: 100% - 20%;
+}

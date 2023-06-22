@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind Css File -->
+    <link rel="stylesheet" href="./public/output.css"/>
+    <!-- Google Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+    <title>Getting Started with Tailwind Css</title>
+</head>
+<body class="font-Poppins grid place-content-center min-h-screen">
+    <div class="flex flex-col max-w-[350px] shadow-md rounded-md">
+        <img src="./assests/burger.png" alt="burger dish" class="max-h-36 object-cover rounded-t-md"/>
+
+        <div class="p-4">
+            <h1 class="text-xl mb-1">Burger Tower</h1>
+            <h2 class="text-sm mb-4 text-zinc-600">4.8/5 Stars (413 Reviews)</h2>
+            <p class="text-xs mb-2">$$ - American, Burgers</p>
+            <p class="text-xs mb-4 text-zinc-600">
+                Well-known burger franchise serving grilled burgers, fries & shakes.
+            </p>
+            <div class="flex gap-x-2">
+                <button class="btn bg-custom-purple hover:bg-slate-400 duration-300">
+                    View Website
+                </button>
+                <button class="btn bg-custom-blue rounded-md">
+                    Order Curbside
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

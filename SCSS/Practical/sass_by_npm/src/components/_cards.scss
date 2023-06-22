@@ -1,0 +1,12 @@
+//Work like import but better than import
+// @use "../abstracts/fonts" as *;
+// @use '../abstracts/colors' as c;
+
+//by default it'll automatically read index.css file
+//if we use "as *" we don't need to specify any name.
+@use '../abstracts' as a;
+
+.cards {
+    font-size: a.$font-size;
+    color: a.$blue;
+}

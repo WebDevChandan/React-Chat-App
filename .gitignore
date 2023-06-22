@@ -8,3 +8,6 @@ wp-*
 node_modules
 
 Capgemini (BackUp)
+
+*.mp4
+*.webm

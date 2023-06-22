@@ -10,8 +10,8 @@ const router = express.Router();
 router.get('/', getUsers);
 
 
-//Browsers only making a get requrest. So for testing the post rout we need a software, which would help to test our api. That's where "Postman" come in handy. This route is gonna add new user in users.
-// We can't make any requrest other than other than GET requrest in browerse, for to make rest of all the request (like, POST, DELETE etc.) we've to go in Postman.
+//Browsers only making a get request. So for testing the post rout we need a software, which would help to test our api. That's where "Postman" come in handy. This route is gonna add new user in users.
+// We can't make any requrest other than GET requrest in browser, for to make rest of all the request (like, POST, DELETE etc.) we've to go in Postman.
 router.post('/', createUser);
 
 

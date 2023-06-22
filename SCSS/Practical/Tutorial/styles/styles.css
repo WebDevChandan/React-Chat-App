@@ -1,0 +1,23 @@
+header, .contact {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: lightblue;
+  color: rgb(58, 42, 42);
+}
+header button, .contact button {
+  background: rgb(56, 146, 142);
+}
+header button:hover, .contact button:hover {
+  background-color: red;
+}
+header button::after, .contact button::after {
+  content: "King";
+}
+
+.contact {
+  background: lightcoral;
+  width: 80%;
+}/*# sourceMappingURL=styles.css.map */

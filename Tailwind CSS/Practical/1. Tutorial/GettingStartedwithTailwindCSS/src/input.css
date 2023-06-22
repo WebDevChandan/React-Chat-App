@@ -1,0 +1,9 @@
+/* These are the 3 main layers on which tailwind css works */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global CSS */
+.btn {
+    @apply text-white text-xs py-2 px-3 rounded-md;
+}
