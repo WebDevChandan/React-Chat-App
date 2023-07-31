@@ -1,0 +1,11 @@
+{
+  "name": "yt_mp3_app",
+  "version": "1.0.0",
+  "description": "This app will let users to play youtube songs in the background.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chandan Kumar",
+  "license": "ISC"
+}
