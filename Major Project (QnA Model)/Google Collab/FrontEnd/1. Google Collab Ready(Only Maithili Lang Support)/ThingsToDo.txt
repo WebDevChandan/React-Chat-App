@@ -1,0 +1,3 @@
+- Refresh button back to home page
+- Reset button to empty fields
+- Tutorial should display only in desktop 

@@ -1,0 +1,33 @@
+		Hello There, 
+My name is Chandan Kumar and our topic for major project is to build a question answering model in India's poor resource languge.
+
+So here, we've taken a Mathili Languge which majorly spoken in Bihar & Nepal and consdired as one of the India's poor resource Language.
+
+Now i'm going to examplain the working and technologies of our model on which it's built on behalf of my team.
+
+So, the backend of our model is built on Python using Bert Transformer which is used for question answer and performing NLP i.e. Natural Language Processing Tasks.
+
+We've used COQA (Conversational Question Answering) dataset to initially train our Model for English & Hindi Language then after we've used our custom made Mathili Dataset to train it for Maithili Language.
+
+Taking about the frontend, it's using HTML, CSS & vanilla JavaScript. 
+
+we're using flask webframework and ngrok server for the deployment of our model
+
+along with Tesaract API for generating text from an image.
+
+
+
+
+We've also implemented some additionl features to enhance user experience by adding diffferent ways of implementing Textual & Question data.
+
+The very first way is via microphone.
+User can use their microphone, to speak text or question and our model will going convert their speech into text.
+
+The second way is by uploading a text file.
+user just need to upload their text file and our model will fetch the text containing by their file.
+
+The third is by uploading text image.
+Although this feature is in beta mode, so our model current able to generate text from speicfic images. like this.
+
+We also take care about user interface, by making it fully responsive across all device. Like now i'm going to run our model in mobile screen. Which proves our model will look perfectly work across all devices.
+

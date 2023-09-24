@@ -24,12 +24,12 @@ export async function POST(request, response) {
         const data = fs.readFileSync(filePath, 'utf8');
 
         try {
-            const ExampleData = JSON.parse(data);
+            const DetailsData = JSON.parse(data);
 
-            ExampleData.name = formData;
+            DetailsData.name = formData;
 
             // Convert the modified object back to JSON string
-            const updatedData = JSON.stringify(ExampleData, null, 2);
+            const updatedData = JSON.stringify(DetailsData, null, 2);
 
             //Re-Write the file 
             fs.writeFile(filePath, updatedData, 'utf8', (err) => {
