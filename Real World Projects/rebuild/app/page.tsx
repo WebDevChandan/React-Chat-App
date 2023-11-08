@@ -12,7 +12,7 @@ export default function Home() {
           <HomeText />
 
           <div className="home-img">
-            <MyImage src="/img/Chandan_Kumar.webp" />
+            <MyImage src="Chandan_Kumar.webp" />
           </div>
 
         </div>

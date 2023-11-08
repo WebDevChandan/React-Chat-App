@@ -1,5 +1,3 @@
-@import "../../../../styles/variables";
-
 .certificate-popup {
     background-color: var(--bg-black-50);
     position: fixed;
@@ -254,5 +252,4 @@
 
 }
 
-
-@import "../../../../styles/responsive"
+@import "./responsive/certificateDetails"

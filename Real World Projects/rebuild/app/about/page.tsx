@@ -29,7 +29,7 @@ export default function About() {
 
                 <div className="row">
                     <div className="about-img">
-                        <MyImage src="/img/Chandan_Kumar.webp" />
+                        <MyImage src="Chandan_Kumar.webp" />
                         <SocialLinks />
                     </div>
                     <AboutMe />

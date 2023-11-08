@@ -28,8 +28,6 @@ export default function AboutTabs() {
                 tabContentList[index].classList.remove("active");
             }
         })
-
-
     }
 
     return (

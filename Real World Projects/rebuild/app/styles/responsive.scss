@@ -1,6 +1,3 @@
-@import "variables";
-
-
 @media (max-width: 1024px) {
     .home-section .full-screen {
         padding: 50px 0px 50px 100px;
@@ -124,6 +121,12 @@
     .resume-section .resume-item-inner iframe {
         height: 1050px;
     }
+
+    .pp-main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 @media(max-width: 574px) {
@@ -157,5 +160,15 @@
 @media(max-width: 320px) {
     .resume-section .resume-item-inner iframe {
         height: 450px;
+    }
+
+    .portfolio-popup .pp-main .pp-next {
+        font-size: 1.02rem;
+        right: 0px;
+    }
+
+    .portfolio-popup .pp-main .pp-prev {
+        font-size: 1.02rem;
+        left: 0px;
     }
 }

@@ -1,5 +1,3 @@
-@import "variables";
-
 .header {
     @mixin widthCalc($length){
         width: $length;

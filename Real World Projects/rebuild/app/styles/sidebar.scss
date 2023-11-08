@@ -1,5 +1,3 @@
-@import "variables";
-
 .sidebar {
     position: fixed;
     top: 0;
@@ -11,7 +9,7 @@
     transition: all 0.5s ease;
     z-index: 100;
 
-    // Sidebar Header (Logo & Text
+    // Sidebar Header (Logo & Text)
     header {
         position: relative;
 
@@ -238,10 +236,10 @@
     }
 }
 
-.sidebar .sidebar header .image,
+.sidebar header .image,
 .sidebar .icon {
     min-width: 60px;
     border-radius: 6px;
 }
 
-@import "responsive";
+@import "./responsive/sidebar";

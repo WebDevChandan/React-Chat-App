@@ -8,16 +8,22 @@ export default function CertificateDetailsOpenBtn() {
   const toggleCertificateDetails = () => {
     setSwitchDetailsButton(!switchDetailsButton);
 
+    const certificatePopUp = document.querySelector('.certificate-popup')! as HTMLElement;
     const certificateDetailsElement = document.querySelector('.cp-details')! as HTMLElement;
     const certificateInnerDetails = document.querySelector('.cp-details-inner')! as HTMLElement;
 
-    if (!switchDetailsButton)
+    if (!switchDetailsButton) {
       certificateDetailsElement.style.maxHeight = `${certificateInnerDetails.offsetHeight}px`;
+      certificatePopUp.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    }
     else
       certificateDetailsElement.style.maxHeight = `0px`;
-      
-    certificateDetailsElement?.classList.toggle('active');
 
+    certificateDetailsElement?.classList.toggle('active');
   }
 
   return (

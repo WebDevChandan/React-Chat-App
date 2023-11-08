@@ -16,7 +16,7 @@ export default function CertificateCard({ id, label, src, info }: { id: number, 
                     <ThumbImage
                         width={319.95}
                         height={219.95}
-                        src={src}
+                        src={`/img/certificate/thumb/${src}`}
                         altText={info}
                     />
                     <span className="view-certificate">view certificate</span>

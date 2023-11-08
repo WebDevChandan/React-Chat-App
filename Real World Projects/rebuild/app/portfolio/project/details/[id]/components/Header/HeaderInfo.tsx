@@ -1,15 +1,15 @@
 import React from 'react'
 
-export default function HeaderInfo() {
+export default function HeaderInfo({ from, to, client, link, demo, tools }: { from: string, to: string, client: string, link: string, demo: string, tools: string[] | null}) {
     return (
         <div className="info">
             <h3>Project Info</h3>
             <ul>
-                <li>Date - <span>Apr, 2021 - Jul,2021</span></li>
-                <li>Client - <span>Chandan Kumar</span></li>
-                <li>Tools - <span>HTML, CSS, JavaScript</span></li>
-                <li>Web - <span><a href="https://www.google.com">www.domain.com</a></span></li>
-                <li>Demo - <span>Email: Demo@demo.com / Pass: demo</span></li>
+                <li>Date - <span>{from} - {to}</span></li>
+                <li>Client - <span>{client}</span></li>
+                <li>Tools - <span>{tools ? tools.join(', ') : 'No tools specified'}</span></li>
+                <li>Web - <span><a href={link}>www.domain.com</a></span></li>
+                <li>Demo - <span>{demo}</span></li>
             </ul>
         </div>
     )

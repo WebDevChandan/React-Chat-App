@@ -18,7 +18,7 @@ export default function CertificateDetails() {
             description: "It covers topics like exploring Cascading and Inheritance, exploring text styling fundamentals, understanding the use of layouts in CSS, understand the boxing of elements in CSS, among others.",
         },
         mainDetails: {
-            largeImage: "/img/certificate/thumb/HackerRank-Verfied-CSS-Certificate.png",
+            largeImage: "HackerRank-Verfied-CSS-Certificate.png",
             imgText: "HackerRank CSS Certificate"
         }
     }]
@@ -26,9 +26,9 @@ export default function CertificateDetails() {
     return (
         <div className="cp certificate-popup">
             {
-                certificateDetails.map(({ headerDetails, mainDetails }) => (
+                certificateDetails.map(({ headerDetails, mainDetails }, index) => (
                     <>
-                        <div className="cp-details">
+                        <div className="cp-details" key={index}>
                             <div className="cp-details-inner">
                                 <HeaderDetails headerDetails={headerDetails} />
                             </div>

@@ -1,6 +1,22 @@
 import Link from 'next/link';
 import { FaCode, FaEnvelope, FaFileAlt, FaHome, FaUser, FaUsers } from "react-icons/fa";
 import { PiCertificateFill } from 'react-icons/pi';
+import { activateNavLink } from '../Header/HamburgerButton';
+
+export const activateSideLink = (pathName?: string | null) => {
+    const sideLinkLIst = document.querySelector('.menu-links')?.childNodes;
+
+    sideLinkLIst?.forEach((item) => {
+        const link = item.firstChild as HTMLElement;
+
+        if (link.getAttribute('href')?.replace(/[/]/g, "") === pathName)
+            link.parentElement?.classList.add('active');
+
+        else if (link.parentElement?.classList.contains('active'))
+            link.parentElement?.classList.remove('active');
+
+    })
+}
 
 export const navLinks = [
     {
@@ -39,19 +55,7 @@ export const navLinks = [
         active: false,
     },
 ]
-
 export default function SideNavLinks() {
-    const activateLink = (currentElement?: HTMLElement, navLinkList?: any) => {
-
-        if (currentElement?.classList.contains("active")) return;
-
-        navLinkList?.forEach((linkElement: HTMLElement) => {
-            if (currentElement === linkElement)
-                linkElement.classList.add("active");
-            else
-                linkElement.classList.remove("active");
-        })
-    }
 
     return (
         <div className="menu-bar">
@@ -59,7 +63,11 @@ export default function SideNavLinks() {
                 <ul className="menu-links">
                     {
                         navLinks.map(({ label, icon, active }, index) => (
-                            <li className={`nav-link${active ? " active" : ""} outer-shadow`} key={index} onClick={(e) => activateLink(e.currentTarget, e.currentTarget.parentElement?.childNodes)}>
+                            <li className={`nav-link${active ? " active" : ""} outer-shadow`} key={index}
+                                onClick={(e) => {
+                                    const link = e.currentTarget.firstChild as HTMLElement;
+                                    activateNavLink(link.getAttribute('href')?.replace(/[/]/g,""));
+                                }}>
                                 <Link href={label !== "Home" ? label.toLowerCase() : "/"}>
                                     <i className='icon'>{icon}</i>
                                     <span className="text nav-text">{label}</span>

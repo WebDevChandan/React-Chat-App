@@ -13,7 +13,7 @@ export default function MainDetails({ mainDetails }: { mainDetails: mainDetailsT
         <div className="cp-main-inner">
             <CertificateDetailsOpenBtn />
             <CertificateDetailsCloseBtn />
-            <LargeImage width={869} height={1152} largeImage={mainDetails.largeImage} altText={mainDetails.imgText} />
+            <LargeImage width={869} height={1152} largeImage={`/img/certificate/thumb/${mainDetails.largeImage}`} altText={mainDetails.imgText} />
         </div>
     )
 }
