@@ -1,4 +1,6 @@
-import { ValidationMessage } from ".."
+"use client";
+import { validationFieldUI } from "./ValidationMessage";
+import { checkValidation } from "./ValidationRules";
 
 export default function InputFields() {
     const inputFieldData = [
@@ -7,7 +9,7 @@ export default function InputFields() {
             type: 'text',
             placeholder: 'Full Name',
             name: 'name',
-            id: 'user'
+            id: 'userName'
         },
         {
             validationId: "emailId",
@@ -17,23 +19,28 @@ export default function InputFields() {
             id: 'email'
         },
         {
-            validationId: "emailId",
+            validationId: "subject",
             type: 'text',
             placeholder: 'Subject',
             name: 'subject',
+            id: 'subject',
         },
-
     ]
 
     return (
         <div className="w-50">
-            {inputFieldData.map(({ validationId, type, placeholder, name, id }, index) => (
-                <>
-                    <ValidationMessage id={validationId} />
-                    <div className="input-group outer-shadow hover-in-shadow" key={index}>
-                        <input type={type} placeholder={placeholder} className="input-control" name={name} id={id ? id : ""} autoComplete="off" />
-                    </div>
-                </>
+            {inputFieldData.map(({ type, placeholder, name, id }, index) => (
+                <div className="input-group outer-shadow hover-in-shadow" key={index}>
+                    <input type={type} placeholder={placeholder} className="input-control" name={name} id={id ? id : ""} autoComplete="off" required
+                        onChange={(e) => {
+                            if (!e.target.value) {
+                                validationFieldUI(e.currentTarget, true);
+                                return;
+                            }
+                            checkValidation(name, e.target.value.toString(), e.currentTarget);
+                        }}
+                    />
+                </div>
             ))
             }
 

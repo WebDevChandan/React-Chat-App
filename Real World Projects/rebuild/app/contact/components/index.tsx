@@ -9,9 +9,5 @@ import ValidationMessage from "./Form/ValidationMessage";
 export {
     ContactDetails,
     ContactForm,
-    Form,
-    ValidationMessage,
-    InputFields,
-    TextareaField,
-    Submit,
-}
+    Form, InputFields, Submit, TextareaField, ValidationMessage
+};
