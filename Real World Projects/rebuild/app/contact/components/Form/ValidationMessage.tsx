@@ -4,6 +4,7 @@ import '../../styles/validationMessage.scss';
 
 let validationTimeout: NodeJS.Timeout | null = null;
 
+
 export const validationFieldUI = (currentElement: HTMLElement, inputValid: boolean) => {
     if (inputValid)
         currentElement.style.border = "none"
