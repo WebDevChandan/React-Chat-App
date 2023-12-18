@@ -6,9 +6,9 @@ wp-*
 
 node_modules
 
-# Capgemini (BackUp)
+Capgemini (BackUp)
 
 *.mp4
-*.webm
-*.mov
-*.wav
+# *.webm
+# *.mov
+# *.wav
