@@ -12,7 +12,7 @@ node_modules
 
 Capgemini (BackUp)
 
-# *.mp4
+*.mp4
 *.webm
 *.mov
 *.wav
