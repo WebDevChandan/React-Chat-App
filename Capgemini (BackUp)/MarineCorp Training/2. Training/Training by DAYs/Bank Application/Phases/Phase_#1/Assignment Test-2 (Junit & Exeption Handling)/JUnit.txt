@@ -1,0 +1,39 @@
+Junit IMPORTANT MCQ QUESTIONS:-
+
+1. TestCase contains a test case and defines the fixture to run multiple tests.
+
+2. Which of the following method of TestResult class informs the result that a test was completed?
+ void endTest(Test test)
+
+3. @Test annotation along with expected attribute can be used to test the code whether code throws desired exception or not.
+ True
+
+4. JUnit is a proprietory framework.
+ FAlse
+
+5. Which of the following method of TestSuite class runs the tests and collects their result in a TestResult?
+ void run(TestResult result)
+
+6. Which of the following method of TestResult class adds an error to the list of errors?
+ void addError(Test test, Throwable t)
+
+7. Which of the following method of TestSuite class counts the number of test cases that will be run by this test?
+ nt countTestCases()
+
+8. Fixture includes tearDown() method which runs after all test methods get executed.
+ False (Fixture includes tearDown() method which runs after every test method)
+
+9. What is Fixture?
+ Fixture is a fixed state of a set of objects used as a baseline for running tests. The purpose of a test fixture is to ensure that there is a well known and fixed environment in which tests are run so that results are repeatable.
+
+10. Which of the following method of TestCase class tears down the fixture, for example, close a network connection?
+ void tearDown() (void tearDown() method tears down the fixture.)
+
+11. Which of the following class contains methods to collect the results of executing a test case?
+  TestResult
+
+12. Which of the following method of TestSuite class returns the test at the given index?
+ Test testAt(int index)
+
+13. Which of the following method of TestCase class sets up the fixture, for example, open a network connection?
+ void setUp()

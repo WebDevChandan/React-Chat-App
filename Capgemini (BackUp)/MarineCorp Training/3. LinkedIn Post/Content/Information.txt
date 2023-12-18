@@ -1,0 +1,47 @@
+Title:- Bank Server Application (TO BE DEVELOPED INDIVIDUALLY)
+
+Objective:-
+Application should allow users to check the balance in the account; withdraw/deposit money; transfer funds from one account to another; display last 10 transactions on the account.
+
+Project Phases:-
+Phases		Description
+Phase #1	Develop application using arrays
+Phase #2	Change array to appropriate collection
+Phase #3	Implement JDBC
+Phase #4	Implement JPA
+Phase #5	Implement Spring
+Phase #6	Implement Spring Data JPA with Spring Boot
+	 
+
+Points to consider:-
+#1: Appropriate error messages if user tries to do an operation on invalid account. 
+#2: Account balance cannot be negative.
+#3: One customer can have only one account, there is only one type of account. Customer can have multiple transactions.
+	Account --> Customer (one-to-one relationship)
+	Customer --> Transactions (one-to-many relationship)
+	
+
+Milestones in Each Phases:-
+#1. Class Design (Only for Phase-1)
+#2. Write Code (Includes Best Practices, Design Pattern, Exception Handling with proper Messages)
+#3. Write Test Cases in JUnit & Mockito
+#4. Check Code Quality in SonarLint & SonarQube
+#5. Java 8 Features Implementation (From Phase-3)
+#6. Creating Github repository and committing code to the repository, branching.
+#7. For Security & Vulnerability Purposes:
+	Used Rollback, to make sure Data should be Persist in case of any interruption during transaction.
+	Synchronization, to make sure each transaction should take place at a time.
+	Used JDBC PreparedStatement, to avoid vulnerability like SQL Injection.
+
+
+
+Tech Stacks Used:- JAVA Full Stack (BackEnd Specific)
+1. Core & Advanced Java (Covers OOPs, Maven, JDBC, JPA, Web Services and many more...)
+2. HTML, CSS, JavaScript, XML & JSON
+3. Git and GitHub
+4. MySQL(Relational DataBase)
+5. Spring Frameworks, Spring Boot & Spring REST
+6. Docker & AWS (DevOps Tools for application Deployment)
+7. PostMan (HTTP Protocol & Build REST Full API)
+8. Initially followed Monolithic then Moved to Microservcies Pattern (Software Architecture)
+9. STS & Eclipse (IDE)

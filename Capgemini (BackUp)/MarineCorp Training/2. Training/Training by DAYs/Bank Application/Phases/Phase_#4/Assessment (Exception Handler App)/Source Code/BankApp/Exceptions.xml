@@ -1,0 +1,91 @@
+<bankapp>
+
+<module name="GetAccountByID">
+	<exception  ="AccountNotFoundException">
+		<actions>
+			<sms to="9875454" sms_body="server is down" />
+			<email to="" emailbody="" />
+			<log name="log" file="" />
+		</actions>
+	</exception>
+</module>
+
+<module name="AmountDeposit">
+	<exception  ="NegativeAmountException">
+		<actions>
+			<sms to="9875454" sms_body="server is down" />
+			<email to="" emailbody="" />
+			<log name="log" file="" />
+		</actions>
+	</exception>
+</module>
+
+<module name="WithdrawAmount">
+	<exception name="InsufficientBalanceException">
+		<actions>
+			<sms to="9875454" sms_body="server is down" />
+			<email to="" emailbody="" />
+			<log name="log" file="" />
+		</actions>
+	</exception>
+	<exception name="NegativeAmountException">
+		<actions>
+			<sms to="9875454" sms_body="server is down" />
+			<email to="" emailbody="" />
+			<log name="log" file="" />
+		</actions>
+	</exception>
+</module>
+
+<module name="FundTransfer">
+	<exception name="InsufficientBalanceException">
+		<actions>
+			<sms to="9875454" sms_body="server is down" />
+			<email to="" emailbody="" />
+			<log name="log" file="" />
+		</actions>
+	</exception>
+	<exception name="NegativeAmountException">
+		<actions>
+			<sms to="9875454" sms_body="server is down" />
+			<email to="" emailbody="" />
+			<log name="log" file="" />
+		</actions>
+	</exception>
+    <exception name="SameAccountException">
+		<actions>
+			<sms to="9875454" sms_body="server is down" />
+			<email to="" emailbody="" />
+			<log name="log" file="" />
+		</actions>
+	</exception>
+     <exception name="AccountNotFoundException">
+		<actions>
+			<sms to="9875454" sms_body="server is down" />
+			<email to="" emailbody="" />
+			<log name="log" file="" />
+		</actions>
+	</exception>
+</module>
+
+<module name="GetTransactionDetails">
+	<exception name="NoTransactionFoundException">
+		<actions>
+			<sms to="9875454" sms_body="server is down" />
+			<email to="" emailbody="" />
+			<log name="log" file="" />
+		</actions>
+	</exception>
+</module>
+
+<module name="UpdateBalanceAndTransaction">
+	<exception name="PersistenceException">
+		<actions>
+			<sms to="9875454" sms_body="server is down" />
+			<email to="" emailbody="" />
+			<log name="log" file="" />
+		</actions>
+	</exception>
+</module>
+
+</bankapp>
