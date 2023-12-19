@@ -1,0 +1,31 @@
+Centralized Version control System Vs Distributed Version control System
+
+What is JPA?
+Java persistence API(JPA) is the java standard specification for mapping java objects to relationsl database.
+ -- JPA is a specification and several implementations are available to implement ORM (Object Relationsl Mapping), populars implementations are Hibernate, eclipsLink and Apache OpenJPA
+ -- JPA specificationa are defined with annotations in a javax.persistence package
+
+
+Fetch Types: Eager and Lazy
+    -->Eager will retrive evrything
+    -->Lazy will retrive on rquest
+
+JPA LIfe Cycle
+Yes, we can persist data in JPA
+XML
+Pattern Design
+Cascade type
+object serialization: Serialization Vs Deserialization
+What is the purpose of @Transaient annotation?
+	To avoid data get persistent in the database
+
+
+
+Case Study:- Exception Handler
+1. how to read xml
+	 Ready by dom or stack perser
+
+2. Take example of Bank App
+	Create account
+	check bal etc.
+ 

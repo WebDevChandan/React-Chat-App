@@ -1,0 +1,50 @@
+Encapsulation
+Interface Vs Abstraction
+Method Overlaoding Vs Method Overriding
+Interface
+Static keyword
+Upcasting Vs Downcasting
+Exception Handling
+
+LIFE CYCLE METHOD:-
+jUnit Exception Handling
+
+static final (constant variable creation)
+final, finally, super & this keyword
+throw Vs throws
+beans
+PoJo
+String vs StringBuffer
+
+DIFFERRENT TYPES OF I/O STREAMS:-
+ByteStream
+CharacterStream
+BufferReader()
+ObjectReader
+
+PREDEIFINED STREAMS:
+Sustem.out/.err/in
+
+Explicit & implicit conversion of Datatypes
+
+Serialization & Deserialization
+
+TDD Vs BDD
+
+
+COLLECTION FRAMEWROK:-
+Concrete Class
+Hierarchy of Collection Framework
+List Iterator
+
+marker Interface (interface doesn't have any abstract method)
+Wrapper Classes
+autoboxing & auto-unboxing	
+
+
+Sonar Eclipse Installation from whatsapp DTP
+Comparable & comparator
+
+== Vs .equalsto();
+
+Serialization Class

@@ -1,0 +1,21 @@
+BankApplicationService
+
+com.cg.bankapp.entity/beans (Containing classes having setter & getter Method)
+-> account
+
+com.cg.bankapp.bankservice
+BankService --> Interface
+BankServiceImpl --> class
+
+com.cg.bankapp.bankdao
+BankDAo->Interface
+BankDaoImpl -> class
+
+com.cg.bankapp.util
+->BankDatabase
+
+com.cg.bankapp.exceptions
+--> Exceptions
+
+
+file name(having main method) --> BankAppMain.java

@@ -1,0 +1,63 @@
+<project>
+<module name="WithdrawAmount">
+	<exception name="AccountNotFoundException">
+		<actions>
+			<sms to="9875454" sms_body="server is down" />
+			<email to="" emailbody="" />
+			<log name="log" file="" />
+		</actions>
+	</exception>
+	<exception name="InsufficientBalanceException">
+		<actions>
+			<sms to="9875454" sms_body="server is down" />
+			<email to="" emailbody="" />
+			<log name="log" file="" />
+		</actions>
+	</exception>
+	<exception name="NegativeAmountException">
+		<actions>
+			<sms to="9875454" sms_body="server is down" />
+			<email to="" emailbody="" />
+			<log name="log" file="" />
+		</actions>
+	</exception>
+</module>
+<module name="DepositAmount">
+	<exception name="AccountNotFoundException">
+		<actions>
+			<sms to="9875454" sms_body="server is down" />
+			<email to="" emailbody="" />
+			<log name="log" file="" />
+		</actions>
+	</exception>
+	<exception name="NegativeAmountException">
+		<actions>
+			<sms to="9875454" sms_body="server is down" />
+			<email to="" emailbody="" />
+		</actions>
+	</exception>
+</module>
+<module name="FundTransfer">
+	<exception name="AccountNotFoundException">
+		<actions>
+			<sms to="9875454" sms_body="server is down" />
+			<email to="" emailbody="" />
+			<log name="log" file="" />
+		</actions>
+	</exception>
+	<exception name="InsufficientBalanceException">
+		<actions>
+			<sms to="9875454" sms_body="server is down" />
+			<email to="" emailbody="" />
+			<log name="log" file="" />
+		</actions>
+	</exception>
+	<exception name="NegativeAmountException">
+		<actions>
+			<sms to="9875454" sms_body="server is down" />
+			<email to="" emailbody="" />
+			<log name="log" file="" />
+		</actions>
+	</exception>
+</module>
+</project>

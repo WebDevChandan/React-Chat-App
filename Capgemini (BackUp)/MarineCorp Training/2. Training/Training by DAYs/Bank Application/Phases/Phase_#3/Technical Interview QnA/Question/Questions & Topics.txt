@@ -1,0 +1,39 @@
+Multiprogramming
+	Multi-User
+
+	Multi Tasking
+		Multi-Threading
+
+
+Threading: Seperate Path of Execution
+
+
+State Transition Diagram of a Thread
+
+Thread LIfe Cycle
+
+
+Kathasara Java Book
+
+Predicate from Java8 features
+
+Optional Classes
+
+
+conneciton.commit() method & rollback
+
+
+
+Remaining Topic in Project: Java Doc, Multi Threading, Implement JUnit-8 Feature (Lambda Expression, foreach etc)
+
+
+
+
+return type of executeQuery, executeUpdate;
+preparedstatement Vs createStatement
+arraylist vs linkedlist
+types of jdbc driver
+initial arraylist
+convert collection to array
+can we sort array list
+mocito: the data is not persistent
