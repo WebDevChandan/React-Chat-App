@@ -2,8 +2,11 @@ HTML/Projects & Assignment/HTML PDF Embedding
 
 Premium Course (FREE)/By Colt Steele
 
+English/Video
+HTML Canvas/Tutorials/Video
+React Js/Tutorial/React Hooks
+
 wp-*
-!wp-content
 
 node_modules
 
@@ -12,4 +15,6 @@ Capgemini (BackUp)
 *.mp4
 *.webm
 *.mov
+*.wav
+*.zip
 *.wav

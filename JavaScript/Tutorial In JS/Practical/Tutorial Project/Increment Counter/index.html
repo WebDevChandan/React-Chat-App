@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width" initial-scale="1.0" />
+<title>Increment Counter</title>
+
+<!-- Font-awesome v4.7.0 CDN library link, to get font-awesome icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body>
+<!-- CONTAINER -->
+<div class="container">					
+					<!-- data-* attributes are designed to hold custom data for custom code (typically cliend side JS) to process. We can easily get it through JavaScript '.getAttribute()' method which help in getting the value of any attribute following by the reference of the element. 
+					Here, data-* will work as custom attribute that will assign custom data.
+					Example: data-target-->
+					
+	 <div class="cards">
+		<span id= "temp" class="fa fa-5x">&#xf0f4;</span></h2>				
+		<h2 class="counter" data-target="4000"></h2>
+		<p>Completed Projects</p>
+	 </div>
+	 
+	 <div class="cards">
+		<span id= "temp" class="fa fa-5x">&#xf0c0;</span></h2>				
+		<h2 class="counter" data-target="15000"></h2>
+		<p>Our Happy Clients</p>
+	 </div>
+	
+	<div class="cards">
+		<span id= "temp" class="fa fa-5x">&#xf201;</span></h2>				
+		<h2 class="counter" data-target="500"></h2>
+		<p>OnGoing Projects</p>
+	</div> 
+
+</div>
+
+
+
+
+
+<script src="js/main.js"></script>
+</body>
+</html>
