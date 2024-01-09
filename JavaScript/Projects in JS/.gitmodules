@@ -1,0 +1,3 @@
+[submodule "web3Wallet"]
+	path = web3Wallet
+	url = ./web3Wallet
