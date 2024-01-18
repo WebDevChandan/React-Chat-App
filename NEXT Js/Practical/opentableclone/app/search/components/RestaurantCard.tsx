@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { PRICE, Cuisine, Location } from "@prisma/client";
+import { PRICE, Cuisine, Location, Review } from "@prisma/client";
 import Price from "@/app/components/Price";
+import Rating from "./Rating";
 
 interface RestaurantProps {
     id: number;
@@ -10,6 +11,7 @@ interface RestaurantProps {
     cuisine: Cuisine;
     location: Location;
     slug: string;
+    reviews: Review[]
 }
 
 export default function RestaurantCard({ restaurant }: { restaurant: RestaurantProps }) {
@@ -24,8 +26,7 @@ export default function RestaurantCard({ restaurant }: { restaurant: RestaurantP
             <div className="pl-5">
                 <h2 className="text-3xl">{restaurant.name}</h2>
                 <div className="flex items-start">
-                    <div className="flex mb-2">*****</div>
-                    <p className="ml-2 text-sm">Awesome</p>
+                    <Rating reviews={restaurant.reviews} />
                 </div>
                 <div className="mb-9">
                     <div className="font-light flex text-reg">
@@ -38,7 +39,6 @@ export default function RestaurantCard({ restaurant }: { restaurant: RestaurantP
                     <Link href={`/restaurant/${restaurant.slug}`}>View more information</Link>
                 </div>
             </div>
-
         </div>
     )
 }

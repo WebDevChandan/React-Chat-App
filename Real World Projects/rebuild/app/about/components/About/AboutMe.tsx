@@ -2,15 +2,13 @@ import { Button } from '@/app/components'
 import Link from 'next/link'
 import React from 'react'
 
-export default function AboutMe() {
+export default function AboutMe({ info }: { info: string | TrustedHTML }) {
     return (
         <div className="about-info">
+            <p dangerouslySetInnerHTML={{ __html: info }} />
+
             <p>
-                Hello, My name is Chandan Kumar. I am a <span>Full-Stack Web/Java Developer</span> from Jharkhand, India. I like to code things from scratch and enjoy bringing ideas to life in the browser. I value simple content structure, clean design patterns, and thoughtful interactions. I've done remote work for agencies, consulted for startups, and also worked as a Freelancer in a
-                various online digital platform.
-                <br /><br />I love in turning People's Imagination into
-                Reality. Feel free to take a look at my latest projects on
-                <Link href="/portfolio" className="portfolioPage" > Portfolio Page</Link>.
+                I love in turning People's Imagination into Reality.Feel free to take a look at my latest projects on <Link href="/portfolio" className="portfolioPage" > Portfolio Page</Link>.
             </p>
 
             <p>

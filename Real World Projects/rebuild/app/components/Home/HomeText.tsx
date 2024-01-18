@@ -1,7 +1,6 @@
-import Link from "next/link";
 import { Button } from "..";
 
-export default function HomeText() {
+export default function HomeText({ role }: { role: string[] | undefined }) {
     return (
         <div className="home-text">
 
@@ -10,8 +9,8 @@ export default function HomeText() {
             </h2>
             <h1>Full-Stack Web/Java Developer</h1>
 
-            <Button label="Portfolio"/>
-            <Button label="Resume"/>
+            <Button label="Portfolio" />
+            <Button label="Resume" />
 
         </div>
     )

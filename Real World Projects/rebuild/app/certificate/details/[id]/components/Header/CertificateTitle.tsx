@@ -1,4 +1,4 @@
-export default function CertificateTitle({ name , authority}:{name: string, authority: string}) {
+export default function CertificateTitle({ name , authority}:{name: string, authority?: string}) {
     return (
         <div className="cp-title cp-title">
             <h2>{name}</h2>

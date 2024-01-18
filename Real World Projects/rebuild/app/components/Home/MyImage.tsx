@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function MyImage({src}: {src: string}) {
+export default function MyImage({ src }: { src: string | undefined }) {
     return (
         <div className="img-box inner-shadow">
             <Image

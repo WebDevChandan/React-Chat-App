@@ -7,8 +7,8 @@ import { LargeImage } from '@/app/certificate/details/[id]/components';
 export default function MainDetails({ src, altText, titleText, webFrameLink }: {
     src: string[];
     altText: string;
-    titleText: string;
-    webFrameLink: string;
+    titleText?: string;
+    webFrameLink?: string;
 }) {
     const [count, setCount] = useState(0);
     const [switchFrameToPic, setSwitchFrameToPic] = useState(true);

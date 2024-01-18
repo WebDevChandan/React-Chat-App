@@ -1,32 +1,40 @@
+import { PrismaClient } from "@prisma/client";
 import { CertificateDescription, CertificateInfo, CertificateTitle } from "..";
 
 type HeaderDetailsType = {
-    title: {
-        name: string;
-        authority: string;
-    };
-    info: {
-        issueDate: string;
-        expiryDate: string;
-        skill: string;
-        link: string;
-    };
+    authority: string;
+    issueDate: string;
+    expiryDate: string;
+    skill: string;
+    link: string;
     description: string;
-}
+} | undefined
 
-export default function HeaderDetails({headerDetails}: {headerDetails: HeaderDetailsType}) {
+const prisma = new PrismaClient();
+
+const fetchCertificateTitle = async (details_id?: string) => {
+    const certificateTitle = await prisma.certificate.findUnique({
+        where: { details_id },
+        select: {
+            label: true,
+        }
+    });
+    return certificateTitle;
+}
+export default async function HeaderDetails({ headerDetails, slug }: { headerDetails: HeaderDetailsType, slug: string | undefined }) {
+    const certificateTitle = await fetchCertificateTitle(slug);
     return (
         <>
-            <CertificateTitle name={headerDetails.title.name} authority={headerDetails.title.authority} />
+            <CertificateTitle name={certificateTitle!.label} authority={headerDetails?.authority} />
 
             <div className="cp-project-details">
                 <div className="row">
-                    <CertificateDescription description={headerDetails.description} />
+                    <CertificateDescription description={headerDetails!.description} />
                     <CertificateInfo
-                        issueDate={headerDetails.info.issueDate}
-                        expiryDate={headerDetails.info.expiryDate}
-                        skill={headerDetails.info.skill}
-                        link={headerDetails.info.link}
+                        issueDate={headerDetails?.issueDate}
+                        expiryDate={headerDetails?.expiryDate}
+                        skill={headerDetails?.skill}
+                        link={headerDetails!.link}
                     />
                 </div>
             </div>

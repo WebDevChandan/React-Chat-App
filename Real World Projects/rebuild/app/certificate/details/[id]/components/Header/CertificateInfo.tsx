@@ -3,7 +3,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 export default function CertificateInfo(
     { issueDate, expiryDate, skill, link }:
-    { issueDate: string, expiryDate: string, skill: string, link: string }
+    { issueDate?: string, expiryDate?: string, skill?: string, link: string }
     ) {
     return (
         <div className="info">

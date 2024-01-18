@@ -1,7 +1,35 @@
+import { PrismaClient } from '@prisma/client';
 import { Effects, HomeText, MyImage } from './components';
 import './styles/home.scss';
 
-export default function Home() {
+const prisma = new PrismaClient();
+
+interface HomeDataType {
+  image: string,
+  role: string[],
+}
+
+const fetchHomeDetails = async (): Promise<HomeDataType | null> => {
+  try {
+    const homeData = await prisma.home.findFirst({
+      select: {
+        image: true,
+        role: true,
+      }
+    });
+
+    return homeData;
+
+  } catch (error) {
+    console.log("Error Fetching Home Details: ", error);
+    return null;
+  }
+
+}
+
+export default async function Home() {
+  const homeData = await fetchHomeDetails();
+
   return (
     <section className="home-section section" id="home">
       <Effects />
@@ -9,11 +37,15 @@ export default function Home() {
       <div className="container">
         <div className="row full-screen align-items-center">
 
-          <HomeText />
+          {homeData && (
+            <>
+              <HomeText role={homeData?.role} />
 
-          <div className="home-img">
-            <MyImage src="Chandan_Kumar.webp" />
-          </div>
+              <div className="home-img">
+                <MyImage src={homeData?.image} />
+              </div>
+            </>
+          )}
 
         </div>
       </div>

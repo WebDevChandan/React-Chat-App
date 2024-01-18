@@ -1,31 +1,40 @@
+import { PrismaClient } from "@prisma/client";
 import { FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa"
 
-export default function ContactDetails() {
-    const contactDetailsData = [{
-        label: "phone",
-        details: "+91 6207472428",
-        icon: <FaPhone />,
-    }, {
-        label: "email",
-        details: "hirechandan@gmail.com",
-        icon: <FaEnvelope />,
-    }, {
-        label: "phone",
-        details: "Chas-Bokaro, Jharkhand- 827013",
-        icon: <FaMapMarkerAlt />,
-    },
-    ]
+const prisma = new PrismaClient();
+
+const fetchContactDetails = async () => {
+    try {
+        const contactDetail = await prisma.contact.findMany({
+            select: {
+                label: true,
+                details: true,
+            }
+        })
+        return contactDetail;
+    } catch (error) {
+        console.log("Error Fetching skill Data: ", error)
+        return null;
+    }
+}
+export default async function ContactDetails() {
+    const contactDetailsDatas = await fetchContactDetails();
+
+    const contactIcon = [<FaPhone />, <FaEnvelope />, <FaMapMarkerAlt />];
+
     return (
         <div className="row">
-            {contactDetailsData.map(({ label, details, icon }, index) => (
-                <div className="contact-item" key={index}>
-                    <div className="contact-item-inner outer-shadow">
-                        <i>{icon}</i>
-                        <span>{label}</span>
-                        <p>{details}</p>
+            {contactDetailsDatas &&
+                (contactDetailsDatas?.map(({ label, details }, index) => (
+                    <div className="contact-item" key={index}>
+                        <div className="contact-item-inner outer-shadow">
+                            <i>{contactIcon[index]}</i>
+                            <span>{label}</span>
+                            <p>{details}</p>
+                        </div>
                     </div>
-                </div>
-            ))}
+                )))
+            }
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function HeaderInfo({ from, to, client, link, demo, tools }: { from: string, to: string, client: string, link: string, demo: string, tools: string[] | null}) {
+export default function HeaderInfo({ from, to, client, link, demo, tools }: { from: string, to: string, client: string, link: string, demo: string | undefined, tools: string[] | null }) {
     return (
         <div className="info">
             <h3>Project Info</h3>

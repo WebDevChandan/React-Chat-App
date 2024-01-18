@@ -1,0 +1,3 @@
+[submodule "web3wallet"]
+	path = web3wallet
+	url = https://github.com/WebDevChandan/web3wallet.git

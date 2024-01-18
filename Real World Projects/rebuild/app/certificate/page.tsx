@@ -1,16 +1,30 @@
+import { PrismaClient } from '@prisma/client';
 import Title from '../components/Title';
 import { CertificateCard } from './components/index';
 import './styles/certificate.scss';
 
-export default function Certificate() {
-    const certificateCardInfo = [
-        {
-            id: 1,
-            label: "CSS",
-            src: "HackerRank-Verfied-CSS-Certificate.png",
-            info: "HackerRank Verfied CSS Certificate",
-        }
-    ]
+const prisma = new PrismaClient();
+
+const fetchCertificateCardInfo = async () => {
+    try {
+        const certificateCardInfo = await prisma.certificate.findMany({
+            select: {
+                label: true,
+                src: true,
+                info: true,
+                details_id: true
+            }
+        });
+        return certificateCardInfo;
+        
+    } catch (error) {
+        console.log("Error Fetching Certificate Card Info", error);
+        return [];
+    }
+}
+
+export default async function Certificate() {
+    const certificateCardInfo = await fetchCertificateCardInfo();
 
     return (
         <section className="certificate-section section" id="certificate">
@@ -18,8 +32,8 @@ export default function Certificate() {
                 <Title title='Certificate' subTitle='Achievements' />
 
                 <div className="row">
-                    {certificateCardInfo.map(({ id, label, src, info }, index) => (
-                        <CertificateCard id={id} label={label} src={src} info={info} key={index} />
+                    {certificateCardInfo && certificateCardInfo?.map(({ details_id, label, src, info }, index) => (
+                        <CertificateCard id={details_id} label={label} src={src} info={info} key={index} />
                     ))}
 
                 </div>
