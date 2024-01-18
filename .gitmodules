@@ -1,6 +1,39 @@
-[submodule "web3wallet"]
-	path = web3wallet
-	url = https://github.com/WebDevChandan/web3wallet.git
 [submodule "Blockchain/Projects/Web 3.0"]
     path = Blockchain/Projects/Web 3.0
     url = https://github.com/WebDevChandan/web3wallet.git
+[submodule "JavaScript/Projects in JS/Hangman Game"]
+    path = JavaScript/Projects in JS/Hangman Game
+    url = https://github.com/WebDevChandan/Hangman.git
+[submodule "JavaScript/Projects in JS/OnePiano"]
+    path = JavaScript/Projects in JS/OnePiano
+    url = https://github.com/WebDevChandan/onePiano.git
+[submodule "JavaScript/Projects in JS/QR-Code Generator"]
+    path = JavaScript/Projects in JS/QR-Code Generator
+    url = https://github.com/WebDevChandan/QRCodeGenerator.git
+[submodule "JavaScript/Projects in JS/Text To Speech & Speech-Txt Converter"]
+    path = JavaScript/Projects in JS/Text To Speech & Speech-Txt Converter
+    url = https://github.com/WebDevChandan/text-speech-converter.git
+[submodule "JavaScript/Projects in JS/WeatherDetector"]
+    path = JavaScript/Projects in JS/WeatherDetector
+    url = https://github.com/WebDevChandan/WeatherDetector.git
+[submodule "JavaScript/Projects in JS/Web3Wallet"]
+	path = JavaScript/Projects in JS/Web3Wallet
+	url = https://github.com/WebDevChandan/web3wallet.git
+[submodule "JavaScript/Tutorial In JS/Practical/Tutorial Project/Final Project (Google Keep App)"]
+	path = JavaScript/Tutorial In JS/Practical/Tutorial Project/Final Project (Google Keep App)
+	url = https://github.com/WebDevChandan/keepclone.git
+[submodule "NEXT Js/Practical/share_prompts"]
+	path = NEXT Js/Practical/share_prompts
+	url = https://github.com/WebDevChandan/shareprompt.git
+[submodule "NEXT Js/Practical/todo-app"]
+	path = NEXT Js/Practical/todo-app
+	url = https://github.com/WebDevChandan/Next-Todo-app.git
+[submodule "NodeJs/ExpressJs Tutorial/Practical"]
+	path = NodeJs/ExpressJs Tutorial/Practical
+	url = https://github.com/WebDevChandan/FirstExpressApp.git
+[submodule "NodeJs/NodeJs Tutorial/Practical"]
+	path = NodeJs/NodeJs Tutorial/Practical
+	url = https://github.com/WebDevChandan/React-Chat-App.git
+[submodule "React Js/Projects/React Chat APP/BackEnd"]
+	path = React Js/Projects/React Chat APP/BackEnd
+	url = https://github.com/WebDevChandan/react-firebase-auth.git
