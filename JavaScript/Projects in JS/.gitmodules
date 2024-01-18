@@ -1,9 +1,0 @@
-[submodule "web3Wallet"]
-	path = web3Wallet
-	url = ./web3Wallet
-[submodule "onePiano"]
-	path = onePiano
-	url = https://github.com/WebDevChandan/onePiano.git
-[submodule "web3wallet"]
-	path = web3wallet
-	url = https://github.com/WebDevChandan/web3wallet.git

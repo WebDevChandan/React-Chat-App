@@ -1,3 +1,6 @@
 [submodule "web3wallet"]
 	path = web3wallet
 	url = https://github.com/WebDevChandan/web3wallet.git
+[submodule "Blockchain/Projects/Web 3.0"]
+    path = Blockchain/Projects/Web 3.0
+    url = https://github.com/WebDevChandan/web3wallet.git
