@@ -36,4 +36,4 @@
 	url = https://github.com/WebDevChandan/React-Chat-App.git
 [submodule "React Js/Projects/React Chat APP/BackEnd"]
 	path = React Js/Projects/React Chat APP/BackEnd
-	url = https://github.com/WebDevChandan/react-firebase-auth.git
+	url = https://github.com/WebDevChandan/React-Chat-App/tree/BackEnd
