@@ -42,12 +42,6 @@ export default function MainDetails({ src, altText, titleText, webFrameLink }: {
                 }
             </div>
 
-
-            {/* Loader */}
-            <div className="pp-loader">
-                <div></div>
-            </div>
-
             {!switchFrameToPic && src.length > 1 &&
                 <>
                     <div className="pp-prev"

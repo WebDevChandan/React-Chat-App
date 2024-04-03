@@ -3,6 +3,7 @@ import { HeaderDetails, MainDetails } from './components'
 import './styles/certificateDetails.scss';
 import { PrismaClient } from '@prisma/client';
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
+import { notFound } from 'next/navigation';
 
 const prisma = new PrismaClient();
 
@@ -34,8 +35,7 @@ const fetchCertificateDetails = async (slug: string) => {
         return certificateDetails;
 
     } catch (error) {
-        console.log("Error Fetching Certificate Card Info", error);
-        return null;
+        throw new Error(`Error Fetching Certificate Card Info: ${error}`);
     }
 }
 
@@ -44,11 +44,11 @@ export default async function CertificateDetails({ params }: Params) {
     const certificateDetails = await fetchCertificateDetails(uuid);
 
     return (
-        <div className="cp certificate-popup">
-            <>
+        <>
+            {certificateDetails ? (<div className="cp certificate-popup">
                 <div className="cp-details">
                     <div className="cp-details-inner">
-                        <HeaderDetails headerDetails={certificateDetails?.certificateHeaderDetail} slug={certificateDetails?.slug } />
+                        <HeaderDetails headerDetails={certificateDetails?.certificateHeaderDetail} slug={certificateDetails?.slug} />
                     </div>
                 </div>
 
@@ -56,13 +56,8 @@ export default async function CertificateDetails({ params }: Params) {
 
                 <div className="cp-main">
                     <MainDetails mainDetails={certificateDetails?.certificateMainDetail} />
-
-                    {/* Loader */}
-                    {/* <div className="cp-loader">
-                                <div></div>
-                            </div> */}
                 </div>
-            </>
-        </div>
+            </div>) : notFound()}
+        </>
     )
 }

@@ -1,5 +1,5 @@
 "use client";
-import { FaMoon } from 'react-icons/fa'
+import { FaMoon, FaSun } from 'react-icons/fa'
 import "../../styles/style-switcher.scss"
 import { ColorSwitcher } from '..'
 import { useState, useEffect } from 'react';
@@ -14,22 +14,24 @@ export default function StyleSwitcher() {
             changeThemeMode(currentThemeMode);
 
     }, [])
-
-    const changeThemeMode = (currentThemeMode: string) => {
+    
+    const changeThemeMode = (currentThemeMode?: string) => {
         const bodyClassList = document.querySelector('body')?.classList;
+        
         let found = false;
-
-        bodyClassList?.forEach(existeMode => {
-            if (existeMode === "dark" && currentThemeMode!=="dark") {
+        bodyClassList?.forEach(existMode => {
+            if (existMode === "dark" && currentThemeMode!=="dark") {
                 bodyClassList?.remove("dark");
                 localStorage.setItem("themeMode", "");
                 found = true;
             }
         })
+
         if (!found) {
             bodyClassList?.add("dark");
             localStorage.setItem("themeMode", "dark");
         }
+
     }
 
     return (
@@ -37,8 +39,8 @@ export default function StyleSwitcher() {
 
             <ColorSwitcher toggleColorSwitcher={() => setStyleSwitcherMode(!styleSwitcherMode)} />
 
-            <div className="day-night s-icon outer-shadow hover-in-shadow" onClick={() => changeThemeMode("")}>
-                <i className="fas "><FaMoon /></i>
+            <div className="day-night s-icon outer-shadow hover-in-shadow" onClick={() => changeThemeMode()}>
+                <i className="fas "><FaSun /></i>
             </div>
 
         </div>

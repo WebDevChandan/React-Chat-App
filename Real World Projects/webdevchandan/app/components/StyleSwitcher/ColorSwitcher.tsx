@@ -8,7 +8,6 @@ type toggleColorSwitcherProps = {
 
 export default function ColorSwitcher({ toggleColorSwitcher }: toggleColorSwitcherProps) {
 
-
     useEffect(() => {
         const currentThemeColor: string | null = localStorage.getItem("themeColor");
 

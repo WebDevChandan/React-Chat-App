@@ -1,0 +1,11 @@
+Porfolio Remaining Tasks Need to Improved:-
+-- LocalStorage (Either Find another way to store theme Style (Mode & Color) or make it SSR), Set Default clr to clr-3
+-- Correct Forward & Backward Navigation
+-- Footer Year should be dynamic & move it to more towards bottom
+-- Fix the sidebar for lower screen sizes (check in business laptop)
+-- Add Page Navigation icon animation towards downward in direction
+-- Change the slider of Testimonial
+-- Hide phone & gmail Id like (hir***dan@gmail.com) but add functionality to call & email by clicking
+-- Fix the PDF Viewer in resume section (you can check syncfusion for react)
+-- Optimize Next.js Image
+-- SEO Optimmise each page as much as possible (like check for the title)

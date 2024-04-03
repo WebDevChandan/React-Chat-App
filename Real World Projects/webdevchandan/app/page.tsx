@@ -21,8 +21,7 @@ const fetchHomeDetails = async (): Promise<HomeDataType | null> => {
     return homeData;
 
   } catch (error) {
-    console.log("Error Fetching Home Details: ", error);
-    return null;
+    throw new Error(`Error Fetching Home Details: ${error}`);
   }
 
 }

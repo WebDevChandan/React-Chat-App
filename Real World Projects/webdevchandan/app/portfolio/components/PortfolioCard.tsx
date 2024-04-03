@@ -11,6 +11,7 @@ type portfolioCardDataType = {
         label: string;
     };
 }[] | null
+
 export default function PortfolioCard({ portfolioCardData }: { portfolioCardData: portfolioCardDataType }) {
     const router = useRouter();
 
@@ -19,7 +20,7 @@ export default function PortfolioCard({ portfolioCardData }: { portfolioCardData
             {
                 portfolioCardData?.map(({ details_id, title, src, altText, portfolioCategory }, index) => (
                     <div className="portfolio-item" data-category={portfolioCategory.label.toLowerCase().replace(/[" "]/g, "-")} key={index}
-                        onClick={() => router.push(`${location.pathname}/project/details/${details_id}`)}
+                        onClick={() => router.push(`${location.pathname}/details/${details_id}`)}
                     >
                         <div className="portfolio-item-inner outer-shadow">
                             <PortfolioThumbImage title={title} src={src} altText={altText} />

@@ -7,6 +7,7 @@ import RestaurantNavBar from "./components/RestaurantNavBar";
 import Reviews from "./components/Reviews";
 import Title from "./components/Title";
 import { error } from 'console';
+import { notFound } from 'next/navigation';
 
 const prisma = new PrismaClient();
 
@@ -35,7 +36,8 @@ const fetchRestaurantsBySlug = async (slug: string): Promise<Restaurant> => {
     })
 
     if (!restaurant)
-        throw new Error();
+        //Whenever it get called, it'll trigger the not-found.tsx file
+        notFound();
 
     return restaurant;
 }
