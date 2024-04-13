@@ -40,3 +40,6 @@
 [submodule "React Js/Projects/React Chat APP"]
 	path = React Js/Projects/React Chat APP
 	url = https://github.com/WebDevChandan/React-Chat-App.git
+[submodule "NEXT Js/Practical/opentableclone"]
+	path = NEXT Js/Practical/opentableclone
+	url = https://github.com/WebDevChandan/open-table.git
