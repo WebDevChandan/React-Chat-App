@@ -14,6 +14,9 @@ node_modules
 
 Capgemini (BackUp)
 
+.env
+.next
+
 *.mp4
 *.webm
 *.mov
