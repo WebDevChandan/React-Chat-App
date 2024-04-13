@@ -2,12 +2,12 @@
 import { FaMoon, FaSun } from 'react-icons/fa'
 import "../../styles/style-switcher.scss"
 import { ColorSwitcher } from '..'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 
 export default function StyleSwitcher() {
     const [styleSwitcherMode, setStyleSwitcherMode] = useState(false);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const currentThemeMode: string | null = localStorage.getItem("themeMode");
 
         if (currentThemeMode)
