@@ -1,14 +1,13 @@
+import prisma from '@/utils/prisma';
 import { PrismaClient } from '@prisma/client';
 import { FaGraduationCap } from 'react-icons/fa'
-
-const prisma = new PrismaClient();
 
 const fetchEducationDetail = async () => {
     try {
         const experienceDetail = await prisma.education.findMany({
             select: {
-                from: true,
                 to: true,
+                from: true,
                 level: true,
                 info: true,
                 institution: {

@@ -1,27 +1,26 @@
-import { PrismaClient } from "@prisma/client"
+// "use client";
+import { Suspense } from "react";
+import PDFViewer from "./PDFViewer";
+import Loading from "@/app/components/Loader/SpinLoader";
 
-const prisma = new PrismaClient();
-
-const fetchResume = async () => {
-    try {
-        const resumeFile = await prisma.resume.findFirst({
-            select: {
-                file: true,
-            }
-        })
-        return resumeFile;
-    } catch (error) {
-        console.log("Error Fetching Resume Data: ", error)
-        return null;
-    }
-
+type resumeFileType = {
+    resume: string;
 }
 
-export default async function Resume() {
-    const resumeFile = await fetchResume();
+export default async function Resume({ resumeFile }: { resumeFile: resumeFileType }) {
+    const { status } = await fetch(`${process.env.NEXT_PUBLIC_URL}/resume/${resumeFile.resume}`);
 
     return (
-        resumeFile &&
-        <iframe src={`resume/${resumeFile?.file}`} frameBorder="0"></iframe>
+        <>
+            {
+                status === 200 && <PDFViewer pdfUrl={`${process.env.NEXT_PUBLIC_URL}/resume/${resumeFile.resume}`} />
+                ||
+                <h2
+                style={{
+                    color:"var(--text-black-600)"
+                }}
+                >Opps! Resume Not Found 🥲</h2>
+            }
+        </>
     )
 }

@@ -9,12 +9,11 @@ type mainDetailsType = {
 
 export default function MainDetails({ mainDetails }: { mainDetails: mainDetailsType }) {
 
-
     return (
         <div className="cp-main-inner">
             <CertificateDetailsOpenBtn />
             <CertificateDetailsCloseBtn />
-            <LargeImage width={869} height={1152} largeImage={`/img/certificate/thumb/${mainDetails?.largeImage}`} altText={mainDetails!.imgText} />
+            <LargeImage width={1282} height={961} largeImage={`/img/certificate/thumb/${mainDetails?.largeImage}`} altText={mainDetails!.imgText} />
         </div>
     )
 }

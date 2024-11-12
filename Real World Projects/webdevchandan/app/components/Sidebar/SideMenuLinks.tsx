@@ -1,6 +1,12 @@
+"use client";
+import useAuth from '@/app/hook/useAuth';
 import Link from 'next/link';
-import { FaCode, FaEnvelope, FaFileAlt, FaHome, FaUser, FaUsers } from "react-icons/fa";
+import { useRouter } from 'next/navigation';
+import { BiSolidMessageRoundedDetail } from "react-icons/bi";
+import { FaBriefcase, FaFileAlt, FaGraduationCap, FaHome, FaUser, FaUserCircle, FaUsers } from "react-icons/fa";
+import { MdDashboard, MdWorkHistory } from 'react-icons/md';
 import { PiCertificateFill } from 'react-icons/pi';
+import { SlLogout } from "react-icons/sl";
 import { activateNavLink } from '../Header/HamburgerButton';
 
 export const activateSideLink = (pathName?: string | null) => {
@@ -26,7 +32,7 @@ export const navLinks = [
     },
     {
         label: "About",
-        icon: <FaUser />,
+        icon: <FaUserCircle />,
         active: false,
     },
     {
@@ -41,7 +47,7 @@ export const navLinks = [
     },
     {
         label: "Portfolio",
-        icon: <FaCode />,
+        icon: <MdWorkHistory />,
         active: false,
     },
     {
@@ -51,29 +57,113 @@ export const navLinks = [
     },
     {
         label: "Contact",
-        icon: <FaEnvelope />,
+        icon: <BiSolidMessageRoundedDetail />,
         active: false,
     },
-]
-export default function SideNavLinks() {
+];
+
+export const dashboardNavLinks = [
+    {
+        label: "Dashboard",
+        icon: <MdDashboard />,
+        active: true,
+    },
+    {
+        label: "Profile",
+        icon: <FaUser />,
+        active: false,
+    },
+    {
+        label: "Education",
+        icon: <FaGraduationCap />,
+        active: false,
+    },
+    {
+        label: "Experience",
+        icon: <FaBriefcase />,
+        active: false,
+    },
+    {
+        label: "Certificate",
+        icon: <PiCertificateFill />,
+        active: false,
+    },
+    {
+        label: "Portfolio",
+        icon: <MdWorkHistory />,
+        active: false,
+    },
+    {
+        label: "Testimonial",
+        icon: <FaUsers />,
+        active: false,
+    },
+    {
+        label: "Logout",
+        icon: <SlLogout />,
+        active: false,
+    },
+];
+
+export default function SideNavLinks({ pathName }: { pathName: string }) {
+    const isDashboard = pathName === "/dashboard" || pathName.startsWith("/dashboard");
+    const { logOut } = useAuth();
+    const router = useRouter();
+
+    const handleLogout = async (event: React.FormEvent) => {
+        event.preventDefault();
+        await logOut();
+        router.push("/");
+    }
 
     return (
         <div className="menu-bar">
             <div className="menu">
                 <ul className="menu-links">
                     {
-                        navLinks.map(({ label, icon, active }, index) => (
-                            <li className={`nav-link${active ? " active" : ""} outer-shadow`} key={index}
-                                onClick={(e) => {
-                                    const link = e.currentTarget.firstChild as HTMLElement;
-                                    activateNavLink(link.getAttribute('href')?.replace(/[/]/g,""));
-                                }}>
-                                <Link href={label !== "Home" ? label.toLowerCase() : "/"}>
-                                    <i className='icon'>{icon}</i>
-                                    <span className="text nav-text">{label}</span>
-                                </Link>
-                            </li>
-                        ))
+                        !isDashboard
+                            ? (navLinks.map(({ label, icon, active }, index) => (
+                                <li
+                                    className={`nav-link ${active ? "active" : ""} outer-shadow`}
+                                    key={index}
+                                    onClick={(e) => {
+                                        const link = e.currentTarget.firstChild as HTMLElement;
+                                        activateNavLink(link.getAttribute('href')?.replace(/[/]/g, ""));
+                                    }}
+                                    title={label}
+                                >
+                                    <Link href={label !== "Home" ? label.toLowerCase() : "/"}>
+                                        <i className='icon'>{icon}</i>
+                                        <span className="text nav-text">{label}</span>
+                                    </Link>
+                                </li>
+                            )))
+                            : (dashboardNavLinks.map(({ label, icon, active }, index) => (
+                                label === "Logout"
+                                    ? (<li
+                                        className={`nav-link ${active ? "active" : ""} outer-shadow`}
+                                        key={index}
+                                        onClick={(e) => { handleLogout(e) }}
+                                        title={label}
+                                    >
+                                        <i className='icon'>{icon}</i>
+                                        <span className="text nav-text">{label}</span>
+                                    </li>)
+                                    : (<li
+                                        className={`nav-link ${active ? "active" : ""} outer-shadow`}
+                                        key={index}
+                                        onClick={(e) => {
+                                            const link = e.currentTarget.firstChild as HTMLElement;
+                                            activateNavLink(link.getAttribute('href')?.replace(/[/]/g, ""));
+                                        }}
+                                        title={label}
+                                    >
+                                        <Link href={label !== "Dashboard" ? `/dashboard/${label.toLowerCase()}` : "/dashboard"}>
+                                            <i className='icon'>{icon}</i>
+                                            <span className="text nav-text">{label}</span>
+                                        </Link>
+                                    </li>)
+                            )))
                     }
                 </ul>
             </div>

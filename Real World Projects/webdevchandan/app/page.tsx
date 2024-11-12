@@ -1,23 +1,24 @@
-import { PrismaClient } from '@prisma/client';
-import { Effects, HomeText, MyImage } from './components';
+import prisma from '@/utils/prisma';
+import { Suspense } from 'react';
+import { Effects, HomeText, MyImage, WaveLoader } from './components';
 import './styles/home.scss';
 
-const prisma = new PrismaClient();
-
 interface HomeDataType {
-  image: string,
-  role: string[],
+  name: string,
+  myImages: string[],
+  roles: string[],
 }
 
 const fetchHomeDetails = async (): Promise<HomeDataType | null> => {
   try {
-    const homeData = await prisma.home.findFirst({
+    const homeData = await prisma.personalInfo.findFirst({
       select: {
-        image: true,
-        role: true,
+        name: true,
+        myImages: true,
+        roles: true,
       }
     });
-
+ 
     return homeData;
 
   } catch (error) {
@@ -36,19 +37,21 @@ export default async function Home() {
       <div className="container">
         <div className="row full-screen align-items-center">
 
-          {homeData && (
-            <>
-              <HomeText role={homeData?.role} />
+          <Suspense fallback={<WaveLoader />}>
+            {homeData && (
+              <>
+                <HomeText name={homeData.name} roles={homeData.roles} />
 
-              <div className="home-img">
-                <MyImage src={homeData?.image} />
-              </div>
-            </>
-          )}
+                <div className="home-img">
+                  <MyImage src={homeData?.myImages[0]} />
+                </div>
+              </>
+            )}
+          </Suspense>
 
         </div>
       </div>
-
     </section>
+
   )
 }

@@ -1,8 +1,5 @@
-import { PrismaClient } from '@prisma/client';
-import React from 'react'
-import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'
-
-const prisma = new PrismaClient();
+import prisma from '@/utils/prisma';
+import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 
 export const fetchTestimonialData = async () => {
     try {
@@ -27,10 +24,10 @@ export default async function TestimonialCard() {
     const testimonialData = await fetchTestimonialData();
 
     return (
-        <>
+        <div className="testi-slider-container">
             {testimonialData &&
                 (testimonialData?.map(({ name, region, feedback, img, active }, index) => (
-                    <div className={`${active ? "active " : ""}testi-item`} key={index}>
+                    <div className={`${active ? "active " : ""}testi-item`} key={index} >
                         <i className="left"> <FaQuoteLeft /></i>
                         <i className="right"><FaQuoteRight /></i>
                         <p>{feedback}</p>
@@ -43,6 +40,6 @@ export default async function TestimonialCard() {
                 )))
             }
 
-        </>
+        </div>
     )
 }

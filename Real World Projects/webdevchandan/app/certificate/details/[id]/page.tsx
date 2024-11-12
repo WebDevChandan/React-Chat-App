@@ -1,11 +1,17 @@
-import React from 'react'
-import { HeaderDetails, MainDetails } from './components'
-import './styles/certificateDetails.scss';
-import { PrismaClient } from '@prisma/client';
-import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
+import prisma from '@/utils/prisma';
 import { notFound } from 'next/navigation';
+import { HeaderDetails, MainDetails } from './components';
+import './styles/certificateDetails.scss';
+import { Suspense } from 'react';
+import Loading from '../../../components/Loader/SpinLoader';
+import SpinLoader from '../../../components/Loader/SpinLoader';
 
-const prisma = new PrismaClient();
+export type DetailPropsType = {
+    params: {
+        id: string;
+    };
+}
+
 
 const fetchCertificateDetails = async (slug: string) => {
     try {
@@ -39,12 +45,11 @@ const fetchCertificateDetails = async (slug: string) => {
     }
 }
 
-export default async function CertificateDetails({ params }: Params) {
-    const uuid: string = params.id;
-    const certificateDetails = await fetchCertificateDetails(uuid);
+export default async function CertificateDetails({ params: { id } }: DetailPropsType) {
+    const certificateDetails = await fetchCertificateDetails(id);
 
     return (
-        <>
+        <Suspense fallback={<SpinLoader />}>
             {certificateDetails ? (<div className="cp certificate-popup">
                 <div className="cp-details">
                     <div className="cp-details-inner">
@@ -53,11 +58,10 @@ export default async function CertificateDetails({ params }: Params) {
                 </div>
 
                 <div className="separator"></div>
-
                 <div className="cp-main">
                     <MainDetails mainDetails={certificateDetails?.certificateMainDetail} />
                 </div>
             </div>) : notFound()}
-        </>
+        </Suspense>
     )
 }

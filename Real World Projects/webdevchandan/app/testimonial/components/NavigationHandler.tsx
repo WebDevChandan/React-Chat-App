@@ -2,11 +2,8 @@
 import { useEffect, useState } from 'react';
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
-let setTestiSliderContainerwidth = false;
-
-
-
 export default function NavigationHandler() {
+    let isTestiContainerWidthSet = false;
     let [testiNavigationCount, setTestiNavigationCount] = useState(0);
 
     useEffect(() => {
@@ -16,20 +13,24 @@ export default function NavigationHandler() {
     const testiCardSetup = () => {
         const testiSliderContainer = document.querySelector('.testi-slider-container')! as HTMLElement;
         const testiItems = document.querySelectorAll('.testi-item');
-        const sliderContainerWidth: number = testiSliderContainer?.offsetWidth;
 
-        if (!setTestiSliderContainerwidth) {
-            testiSliderContainer.style.width = `${sliderContainerWidth * testiItems.length}px`;
-            setTestiSliderContainerwidth = true;
+        const sliderContainerWidth: number = testiSliderContainer?.offsetWidth;
+        const totalSliderContainerWidth = sliderContainerWidth * testiItems.length;
+        let testimonialCardWidth: number;
+
+        if (!isTestiContainerWidthSet) {
+            testiSliderContainer.style.width = `${totalSliderContainerWidth}px`;
+            testimonialCardWidth = Math.floor(totalSliderContainerWidth / testiItems.length);
+            isTestiContainerWidthSet = true;
         }
 
         testiItems.forEach((item: Element, index) => {
             const testimonialCard = item as HTMLElement;
-            testimonialCard.style.width = `${sliderContainerWidth / testiItems.length}px`;
+            testimonialCard.style.width = `${testimonialCardWidth}px`;
 
             if (testimonialCard.classList.contains('active')) {
-                const marginLeft = testimonialCard?.offsetWidth * index;
-                testiSliderContainer.style.marginLeft = `-${marginLeft}px`;
+                const marginLeft = testimonialCardWidth * index;
+                testiSliderContainer.style.marginLeft = `${!marginLeft ? marginLeft : -marginLeft}px`;
                 setTestiNavigationCount(-index);
             }
         });
@@ -60,11 +61,11 @@ export default function NavigationHandler() {
     return (
         <>
             <span className="prev outer-shadow hover-in-shadow" onClick={() => testiCardNavigation("left")}
-                onKeyDown={(e) => testiCardNavigation(e.key)} tabIndex={0}>
+                tabIndex={0}>
                 <i><FaAngleLeft /></i>
             </span>
             <span className="next outer-shadow hover-in-shadow" onClick={() => testiCardNavigation("right")}
-                onKeyDown={(e) => testiCardNavigation(e.key)} tabIndex={0}>
+                tabIndex={0}>
                 <i><FaAngleRight /></i>
             </span>
         </>

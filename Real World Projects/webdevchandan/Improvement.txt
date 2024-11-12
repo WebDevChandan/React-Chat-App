@@ -1,11 +1,25 @@
-Porfolio Remaining Tasks Need to Improved:-
--- LocalStorage (Either Find another way to store theme Style (Mode & Color) or make it SSR), Set Default clr to clr-3
--- Correct Forward & Backward Navigation
--- Footer Year should be dynamic & move it to more towards bottom
--- Fix the sidebar for lower screen sizes (check in business laptop)
+//Porfolio Remaining Tasks Need to Improved:-
 -- Add Page Navigation icon animation towards downward in direction
--- Change the slider of Testimonial
--- Hide phone & gmail Id like (hir***dan@gmail.com) but add functionality to call & email by clicking
 -- Fix the PDF Viewer in resume section (you can check syncfusion for react)
--- Optimize Next.js Image
--- SEO Optimmise each page as much as possible (like check for the title)
+-- Fix the thumb & large image path for Certificate & portfolio. Ex: (Certificate/large/project-1/src) as per Updating DB.
+-- Fix the portfolio iframe Responsive
+-- Try to optimize the iframe
+-- Fix BlurDataURL issue for multiple cards & large images for Certificate & portfolio
+-- Optimize Testimonial Images
+-- At last need to delete, the Responsive.scss file from style root dir.
+-- Make component Lazy loading & add Skeleton Screen
+-- Add Name below the side bar menu icon
+-- Fix the background of Text Editor if non-editable
+-- Fix input range UI for background. Take Inspiration from about UI frontend.
+
+//OPTIMIZATION Part:-
+-- SEO Optimmise each page as much as possible (like check for the title & Desc) & SEO Image
+-- Add Cache to Forward & Backward Navigation
+-- Optimize Next.js Image, Add images by Resizing & comprising it, Then link with Cloudnary
+-- Fetch data, from local file stored in server. So, That, we no need to request to DB to fetch data.
+-- PersonalInfo Collection data can be stored as Global, so that it will not take time to fect data
+    for About, Contact pages. But make sure it'll render the updated data as DB gets updated.
+-- Try using Prisma Accelerate (After deployment for fast data fetching)
+-- Make All form as form action
+-- Sanitize the Html editor data
+-- ESLint Setup across the project

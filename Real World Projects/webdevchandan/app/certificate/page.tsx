@@ -1,9 +1,9 @@
-import { PrismaClient } from '@prisma/client';
+import prisma from '@/utils/prisma';
+import { Suspense } from 'react';
+import WaveLoader from '../components/Loader/WaveLoader';
 import Title from '../components/Title';
 import { CertificateCard } from './components/index';
 import './styles/certificate.scss';
-
-const prisma = new PrismaClient();
 
 const fetchCertificateCardInfo = async () => {
     try {
@@ -16,7 +16,7 @@ const fetchCertificateCardInfo = async () => {
             }
         });
         return certificateCardInfo;
-        
+
     } catch (error) {
         console.log("Error Fetching Certificate Card Info", error);
         return [];
@@ -27,16 +27,18 @@ export default async function Certificate() {
     const certificateCardInfo = await fetchCertificateCardInfo();
 
     return (
-        <section className="certificate-section section" id="certificate">
+        <section className="other-section certificate-section" id="certificate">
             <div className="container">
                 <Title title='Certificate' subTitle='Achievements' />
 
-                <div className="row">
-                    {certificateCardInfo && certificateCardInfo?.map(({ details_id, label, src, info }, index) => (
-                        <CertificateCard id={details_id} label={label} src={src} info={info} key={index} />
-                    ))}
+                <Suspense fallback={<WaveLoader />}>
+                    <div className="row">
+                        {certificateCardInfo && certificateCardInfo?.map(({ details_id, label, src, info }, index) => (
+                            <CertificateCard id={details_id} label={label} src={src} info={info} key={index} />
+                        ))}
 
-                </div>
+                    </div>
+                </Suspense>
             </div>
         </section>
 

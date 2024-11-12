@@ -1,11 +1,11 @@
-import { PrismaClient } from "@prisma/client";
+import { DetailPropsType } from "@/app/certificate/details/[id]/page";
+import { SpinLoader } from "@/app/components";
+import prisma from "@/utils/prisma";
+import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import "../../styles/portfolio.scss";
 import { HeaderDetails, MainDetails } from './components';
 import './styles/projectDetails.scss';
-import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
-import { notFound } from "next/navigation";
-
-const prisma = new PrismaClient();
 
 const fetchPortfolioDetails = async (slug: string) => {
     try {
@@ -19,25 +19,18 @@ const fetchPortfolioDetails = async (slug: string) => {
             }
         })
 
-        console.log("Reached Here");
-
         return portfolioDetails;
     } catch (error) {
         console.log(error);
     }
 }
 
-export default async function ProjectDetails({ params }: Params) {
-
-    const uuid: string = params.id;
-    console.log(uuid);
-    const portfolioDetailsData = await fetchPortfolioDetails(uuid);
-    console.log(portfolioDetailsData);
+export default async function ProjectDetails({ params: { id } }: DetailPropsType) {
+    const portfolioDetailsData = await fetchPortfolioDetails(id);
 
     return (
-        <>
+        <Suspense fallback={<SpinLoader />}>
             {portfolioDetailsData ? (<div className="pp portfolio-popup">
-
                 <div className="pp-details">
                     <HeaderDetails
                         headerDetails={portfolioDetailsData?.portfolioHeaderDetail}
@@ -54,6 +47,6 @@ export default async function ProjectDetails({ params }: Params) {
                     webFrameLink={portfolioDetailsData?.portfolioMainDetail.webFrameLink}
                 />
             </div >) : notFound()}
-        </>
+        </Suspense>
     )
 }

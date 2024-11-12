@@ -1,0 +1,86 @@
+@mixin inputControl($inputField: true) {
+    height: 45px;
+    display: block;
+    width: 100%;
+    border-radius: 30px;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    padding: 0 15px;
+    color: var(--text-black-700);
+
+    &.disabled {
+        color: var(--text-disabled);
+        cursor: not-allowed;
+    }
+
+    @if $inputField {
+        padding: 0px 50px;
+    }
+}
+
+.field-label {
+    padding-bottom: 5px;
+
+    label {
+        color: var(--text-black-600);
+        text-transform: capitalize;
+    }
+}
+
+.input-group {
+    position: relative;
+    margin: 0 0 25px;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+
+    &::after {
+        border-radius: 30px;
+    }
+
+    .input-control {
+        @include inputControl($inputField: true)
+    }
+
+    span {
+        position: absolute;
+        line-height: 50px;
+        color: var(--skin-color);
+        font-size: 18px;
+    }
+    .field-icon{
+        left: 15px;
+    }
+    .delete-icon{
+        top:0px;
+        right: 20px;
+        
+        svg{
+            cursor: pointer;
+            color: #cc3a3b;
+        }
+    }
+
+    textarea {
+        &.textarea-control {
+            @include inputControl($inputField: false);
+            height: 184px;
+            padding-top: 15px;
+            resize: none;
+            line-height: 1.8;
+            height: 100%;
+            border-radius: 5px;
+        }
+    }
+
+}
+
+.input-group.disabled {
+    background: var(--bg-disabled);
+    cursor: not-allowed;
+
+    svg {
+        color: var(--text-disabled);
+        cursor: auto;
+    }
+}

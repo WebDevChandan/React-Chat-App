@@ -1,15 +1,12 @@
-import { PrismaClient } from '@prisma/client';
-import React from 'react'
-import { FaBriefcase } from 'react-icons/fa'
-
-const prisma = new PrismaClient();
+import prisma from '@/utils/prisma';
+import { FaBriefcase } from 'react-icons/fa';
 
 const fetchExpericneDetail = async () => {
     try {
         const experienceDetail = await prisma.experience.findMany({
             select: {
-                to: true,
                 from: true,
+                to: true,
                 role: true,
                 experienceDetail: true,
                 organization: {

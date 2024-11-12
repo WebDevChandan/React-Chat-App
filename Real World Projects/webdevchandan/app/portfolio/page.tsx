@@ -1,9 +1,8 @@
-import { PrismaClient } from '@prisma/client';
-import { Title } from '../components';
-import { PortfolioCard, PortfolioFilter, PortfolioTabs } from './components';
+import prisma from '@/utils/prisma';
+import { Suspense } from 'react';
+import { Title, WaveLoader } from '../components';
+import { PortfolioCard, PortfolioTabs } from './components';
 import './styles/portfolio.scss';
-
-const prisma = new PrismaClient();
 
 const fetchPortfolioCardData = async () => {
     try {
@@ -30,18 +29,19 @@ const fetchPortfolioCardData = async () => {
 }
 
 export default async function Portfolio() {
-
     const portfolioCardData = await fetchPortfolioCardData();
 
     return (
-        <section className="portfolio-section section" id="portfolio">
+        <section className="other-section portfolio-section" id="portfolio">
             <div className="container">
 
                 <Title title="Portfolio" subTitle="Latest Projects" />
 
-                <PortfolioTabs />
+                <Suspense fallback={<WaveLoader />}>
+                    <PortfolioTabs />
 
-                <PortfolioCard portfolioCardData={portfolioCardData} />
+                    <PortfolioCard portfolioCardData={portfolioCardData} />
+                </Suspense>
             </div>
         </section>
     )

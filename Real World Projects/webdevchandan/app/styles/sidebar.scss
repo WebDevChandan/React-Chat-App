@@ -16,34 +16,8 @@
         .image-text {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-evenly;
             height: 50px;
-
-            .image {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                .logo {
-                    width: 40px;
-                    border-radius: 6px;
-                }
-
-                a {
-                    display: inline-block;
-                    text-decoration: none;
-                    text-align: center;
-                    line-height: 36px;
-                    height: 40px;
-                    width: 40px;
-                    border: 2px solid var(--skin-color);
-                    font-size: 24px;
-                    border-radius: 50%;
-                    font-weight: 600;
-                    text-transform: uppercase;
-                    color: var(--skin-color);
-                }
-            }
 
             .logo-text {
                 display: flex;
@@ -236,10 +210,10 @@
     }
 }
 
-.sidebar header .image,
-.sidebar .icon {
-    min-width: 60px;
-    border-radius: 6px;
-}
+// .sidebar header .image,
+// .sidebar .icon {
+//     min-width: 60px;
+//     border-radius: 6px;
+// }
 
 @import "./responsive/sidebar";

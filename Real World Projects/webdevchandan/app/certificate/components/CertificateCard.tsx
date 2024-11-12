@@ -2,7 +2,8 @@
 import { useRouter } from "next/navigation";
 import ThumbImage from "./ThumbImage";
 
-export default function CertificateCard({ id, label, src, info }: { id: string, label: string, src: string, info: string }) {
+export default function CertificateCard({ id, label, src, info }:
+    { id: string, label: string, src: string, info: string }) {
     const router = useRouter();
 
     const openCertificateDetails = (id: string) => {
@@ -14,8 +15,8 @@ export default function CertificateCard({ id, label, src, info }: { id: string, 
             <div className="certificate-item-inner outer-shadow">
                 <div className="certificate-item-img">
                     <ThumbImage
-                        width={319.95}
-                        height={219.95}
+                        width={320}
+                        height={240}
                         src={`/img/certificate/thumb/${src}`}
                         altText={info}
                     />
